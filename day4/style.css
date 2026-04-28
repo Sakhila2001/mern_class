@@ -1,0 +1,12 @@
+h1 {
+  color: green;
+}
+.box {
+  background-color: red;
+  color: white;
+  width: 300px;
+}
+
+.hello {
+  display: inline-block;
+}

@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.box {
+  background: red;
+  color: white;
+  padding: 50px;
+}
+@media (max-width: 768px) {
+  #container {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: green;
+  color: white;
+  padding: 20px;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+#cards-section {
+  display: flex;
+  border-radius: 10px;
+  gap: 20px;
+  padding: 20px;
+}
+.card {
+  min-width: 250px;
+  background-color: #f4f4f4;
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .nav-links {
+    flex-direction: column;
+  }
+  #cards-section {
+    flex-direction: column;
+  }
+}

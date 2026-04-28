@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#box {
+  background: blue;
+  width: 300px;
+  color: white;
+  padding: 30px;
+  margin: 30px;
+}
