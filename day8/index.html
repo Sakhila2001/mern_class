@@ -1,580 +1,1845 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Himalaya College of Technology and Management - Premier higher education institution in Nepal offering BCA, BBS, BIM, BIT and more."
+    />
+    <meta
+      name="keywords"
+      content="Nepal college, BCA Nepal, BBS Nepal, admission Nepal, Kathmandu college"
+    />
     <title>
-      XYZ College – Premier Institution in Nepal | Admissions Open 2026
+      Himalaya College of Technology &amp; Management | Kathmandu, Nepal
     </title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
-  <body>
-    <!-- ==================== TOP BAR (announcement + portal links) ==================== -->
-    <div class="topbar">
-      <div class="container">
-        <p>
-          📢 Admissions Open for 2026 Intake | Limited Seats | Scholarship
-          Available
-        </p>
-        <div class="top-links">
-          <a href="#">Student Portal</a> | <a href="#">Staff Login</a> |
-          <a href="#">Alumni Network</a> | <a href="#">Virtual Tour</a>
-        </div>
-      </div>
-    </div>
 
-    <!-- ==================== HEADER & ENHANCED NAVIGATION (Mega menu style, more links) ==================== -->
-    <header class="header">
-      <div class="container">
-        <div class="logo">
+  <body>
+    <!-- ============================================================
+       HEADER SECTION START
+       Contains: Logo, College Name, and Primary Navigation Menu
+  ============================================================ -->
+    <header class="nav-header">
+      <!-- Top utility bar: contact info and quick actions -->
+      <div id="top-bar">
+        <span>📞 +977-01-4567890</span>
+        <span>✉️ info@himalayacollege.edu.np</span>
+        <span>📍 Kathmandu, Bagmati Province, Nepal</span>
+        <a href="#admissions">Apply Now</a>
+        <a href="#contact">Student Portal</a>
+      </div>
+
+      <!-- Main header: logo + branding -->
+      <div id="main-header">
+        <!-- College Logo Placeholder -->
+        <div id="logo-area">
           <img
-            src="https://placehold.co/140x70?text=XYZ+College+Nepal"
-            alt="XYZ College Logo - Nepal's leading campus"
-            width="140"
-            height="70"
+            src="images/icons/logo.png"
+            alt="Himalaya College of Technology and Management Logo"
+            width="80"
+            height="80"
           />
         </div>
-        <nav class="nav" aria-label="Main Navigation">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li class="has-dropdown">
-              <a href="#about">About</a>
-              <ul class="dropdown">
-                <li><a href="#history">History & Milestones</a></li>
-                <li><a href="#vision">Vision & Mission</a></li>
-              </ul>
-            </li>
-            <li><a href="#programs">Academic Programs</a></li>
-            <li><a href="#departments">Departments</a></li>
-            <li><a href="#admissions">Events</a></li>
-            <li><a href="#research">Blogs</a></li>
 
-            <li><a href="#contact">Contact Us</a></li>
+        <!-- College Name and Tagline -->
+        <div id="college-branding">
+          <h1>Himalaya College of Technology &amp; Management</h1>
+          <p>
+            Affiliated to Tribhuvan University &bull; Established 2001 &bull;
+            Kathmandu, Nepal
+          </p>
+        </div>
+
+        <!-- Accreditation Badges -->
+        <div id="accreditation">
+          <span>TU Affiliated</span>
+          <span>UGC Approved</span>
+          <span>NAAC Accredited</span>
+        </div>
+      </div>
+      <!-- end #main-header -->
+
+      <!-- Primary Navigation Menu -->
+      <nav id="primary-nav" aria-label="Primary Navigation">
+        <ul>
+          <li><a href="#home" aria-current="page">Home</a></li>
+          <li>
+            <a href="#about">About</a>
+            <ul>
+              <li><a href="#about-history">History</a></li>
+              <li><a href="#about-mission">Mission &amp; Vision</a></li>
+              <li><a href="#about-leadership">Leadership</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#programs">Programs</a>
+            <ul>
+              <li><a href="#program-bca">BCA</a></li>
+              <li><a href="#program-bbs">BBS</a></li>
+              <li><a href="#program-bim">BIM</a></li>
+              <li><a href="#program-bit">BIT</a></li>
+              <li><a href="#program-bsc">BSc CSIT</a></li>
+              <li><a href="#program-mba">MBA</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#admissions">Admissions</a>
+            <ul>
+              <li><a href="#admissions-process">How to Apply</a></li>
+              <li><a href="#admissions-requirements">Requirements</a></li>
+              <li><a href="#admissions-scholarships">Scholarships</a></li>
+            </ul>
+          </li>
+          <li><a href="#facilities">Facilities</a></li>
+          <li><a href="#news">News &amp; Events</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- end #primary-nav -->
+    </header>
+    <!-- HEADER SECTION END -->
+
+    <!-- ============================================================
+       MAIN CONTENT AREA START
+  ============================================================ -->
+    <main>
+      <!-- ============================================================
+         HERO SECTION START
+         Contains: Welcome Banner, Tagline, CTA Buttons, Quick Stats
+    ============================================================ -->
+      <section id="home" aria-labelledby="hero-heading">
+        <!-- Hero background image placeholder -->
+        <figure id="hero-banner">
+          <video
+            id="logo-video"
+            src="videos/video.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+            alt="Aerial view of Himalaya College campus in Kathmandu"
+            width="1400"
+            height="600"
+          ></video>
+        </figure>
+
+        <!-- Hero content overlay -->
+        <div id="hero-content">
+          <h2 id="hero-heading">
+            Welcome to Himalaya College of Technology &amp; Management
+          </h2>
+          <p id="hero-tagline">
+            Empowering Nepal's Future Leaders Through Excellence in Education,
+            Innovation, and Character
+          </p>
+          <p id="hero-subtext">
+            Offering world-class undergraduate and postgraduate programs in
+            Technology, Management, and Commerce since 2001.
+          </p>
+
+          <!-- Call-to-Action Buttons -->
+          <div id="hero-cta">
+            <a href="#admissions" role="button">Apply Now — 2083 B.S.</a>
+            <a href="#programs" role="button">Explore Programs</a>
+            <a href="#about" role="button">Learn More</a>
+          </div>
+
+          <!-- Admission Notice Banner -->
+          <div id="admission-notice" role="alert">
+            <strong>Admissions Open:</strong>
+            Entrance examination scheduled for Jestha 15, 2083 B.S. &mdash;
+            <a href="#admissions">Register before Baishakh 30</a>
+          </div>
+        </div>
+        <!-- end #hero-content -->
+
+        <!-- Quick Statistics Bar -->
+        <div id="hero-stats" aria-label="College statistics">
+          <div class="stat-item">
+            <strong>20+</strong>
+            <span>Years of Excellence</span>
+          </div>
+          <div class="stat-item">
+            <strong>5,000+</strong>
+            <span>Alumni Worldwide</span>
+          </div>
+          <div class="stat-item">
+            <strong>95%</strong>
+            <span>Placement Rate</span>
+          </div>
+          <div class="stat-item">
+            <strong>6</strong>
+            <span>Academic Programs</span>
+          </div>
+          <div class="stat-item">
+            <strong>150+</strong>
+            <span>Faculty Members</span>
+          </div>
+        </div>
+        <!-- end #hero-stats -->
+      </section>
+      <!-- HERO SECTION END -->
+
+      <!-- ============================================================
+         ABOUT SECTION START
+         Contains: Introduction, History, Mission, Vision, Core Values
+    ============================================================ -->
+      <section id="about" aria-labelledby="about-heading">
+        <header>
+          <h2 id="about-heading">About Our College</h2>
+          <p>Rooted in Nepal, reaching for the world</p>
+        </header>
+
+        <!-- Brief Introduction -->
+        <div id="about-intro">
+          <img
+            src="images/college.jpg"
+            alt="Main building of Himalaya College of Technology and Management"
+            width="500"
+            height="350"
+          />
+          <div id="about-text">
+            <h3 id="about-history">Our Story</h3>
+            <p>
+              Founded in 2001 A.D. (2058 B.S.), Himalaya College of Technology
+              and Management began with a humble vision: to provide accessible,
+              quality higher education to the youth of Nepal. Located in the
+              heart of Kathmandu, our institution has grown from a single
+              program to a comprehensive multi-faculty college serving over
+              2,000 students annually.
+            </p>
+            <p>
+              Affiliated to Tribhuvan University and approved by the University
+              Grants Commission (UGC) of Nepal, we adhere to the highest
+              academic standards while embracing innovation in pedagogy,
+              research, and industry collaboration.
+            </p>
+            <a href="#programs" role="button">Explore Our Programs</a>
+          </div>
+        </div>
+        <!-- end #about-intro -->
+
+        <!-- Mission and Vision -->
+        <div id="about-mission" aria-labelledby="mission-vision-heading">
+          <h3 id="mission-vision-heading">Mission &amp; Vision</h3>
+
+          <article id="mission">
+            <h4>Our Mission</h4>
+            <p>
+              To provide transformative, student-centered higher education that
+              combines academic rigor with practical skills, ethical values, and
+              a deep understanding of Nepal's socio-economic context — preparing
+              graduates to lead, innovate, and serve their communities.
+            </p>
+          </article>
+
+          <article id="vision">
+            <h4>Our Vision</h4>
+            <p>
+              To be Nepal's most respected and innovative institution of higher
+              learning — recognized for academic excellence, research
+              contributions, industry partnerships, and the lifelong success of
+              our graduates on a global stage.
+            </p>
+          </article>
+        </div>
+        <!-- end #about-mission -->
+
+        <!-- Core Values -->
+        <div id="about-values">
+          <h3>Our Core Values</h3>
+          <ul>
+            <li>
+              <strong>Excellence</strong> — Pursuing the highest standards in
+              everything we do
+            </li>
+            <li>
+              <strong>Integrity</strong> — Acting with honesty, transparency,
+              and ethical responsibility
+            </li>
+            <li>
+              <strong>Innovation</strong> — Embracing creative thinking and
+              modern approaches
+            </li>
+            <li>
+              <strong>Inclusivity</strong> — Welcoming students from all
+              backgrounds across Nepal
+            </li>
+            <li>
+              <strong>Community</strong> — Giving back to Nepal through service
+              and leadership
+            </li>
+          </ul>
+        </div>
+        <!-- end #about-values -->
+
+        <!-- Leadership -->
+        <div id="about-leadership">
+          <h3>Our Leadership</h3>
+          <div class="leader-cards-grid">
+            <article class="leader-card">
+              <img
+                src="images/Dr. Ramesh Sharma.avif"
+                alt="Portrait of Dr. Ramesh Sharma, Principal"
+                width="120"
+                height="120"
+              />
+              <h4>Dr. Ramesh Sharma</h4>
+              <p>Principal &amp; CEO</p>
+              <p>Ph.D. in Computer Science, Tribhuvan University</p>
+            </article>
+
+            <article class="leader-card">
+              <img
+                src="images/Prof. Sunita Adhikari.avif"
+                alt="Portrait of Prof. Sunita Adhikari, Vice Principal Academic"
+                width="120"
+                height="120"
+              />
+              <h4>Prof. Sunita Adhikari</h4>
+              <p>Vice Principal, Academic Affairs</p>
+              <p>M.Phil. in Management, Kathmandu University</p>
+            </article>
+
+            <article class="leader-card">
+              <img
+                src="images/Mr. Bikash Thapa.avif"
+                alt="Portrait of Mr. Bikash Thapa, Head of Department Technology"
+                width="120"
+                height="120"
+              />
+              <h4>Mr. Bikash Thapa</h4>
+              <p>Head of Department, Technology</p>
+              <p>M.Sc. IT, Pokhara University</p>
+            </article>
+          </div>
+        </div>
+        <!-- end #about-leadership -->
+      </section>
+      <!-- ABOUT SECTION END -->
+
+      <!-- ============================================================
+         PROGRAMS SECTION START
+         Contains: Academic programs, each in <article>
+    ============================================================ -->
+      <section id="programs" aria-labelledby="programs-heading">
+        <header>
+          <h2 id="programs-heading">Academic Programs</h2>
+          <p>
+            TU-affiliated undergraduate and postgraduate degrees designed for
+            Nepal's future
+          </p>
+        </header>
+
+        <!-- Programs Grid -->
+        <div id="programs-grid">
+          <!-- BCA Program -->
+          <article id="program-bca" class="program-card">
+            <header>
+              <img
+                src="images/icons/BCA.png"
+                alt="BCA program icon"
+                width="80"
+                height="80"
+              />
+              <h3>Bachelor of Computer Applications (BCA)</h3>
+              <p class="program-duration">4 Years &bull; 8 Semesters</p>
+            </header>
+            <p>
+              A comprehensive undergraduate program focusing on software
+              development, database management, networking, and modern web
+              technologies. Students gain both theoretical foundations and
+              practical industry skills.
+            </p>
+            <ul>
+              <li>Programming: C, Java, Python, PHP</li>
+              <li>Web &amp; Mobile Development</li>
+              <li>Database Management Systems</li>
+              <li>Computer Networks &amp; Security</li>
+              <li>Project Work &amp; Internship</li>
+            </ul>
+            <p><strong>Annual Fee:</strong> NPR 1,20,000</p>
+            <p><strong>Seats Available:</strong> 72</p>
+            <a href="#admissions">Apply for BCA</a>
+          </article>
+
+          <!-- BBS Program -->
+          <article id="program-bbs" class="program-card">
+            <header>
+              <img
+                src="images/icons/BBS.png"
+                alt="BBS program icon"
+                width="80"
+                height="80"
+              />
+              <h3>Bachelor of Business Studies (BBS)</h3>
+              <p class="program-duration">4 Years &bull; Annual System</p>
+            </header>
+            <p>
+              Nepal's most popular undergraduate business program offering deep
+              knowledge in management, accounting, finance, marketing, and
+              entrepreneurship for the Nepali business landscape.
+            </p>
+            <ul>
+              <li>Principles of Management</li>
+              <li>Financial Accounting &amp; Auditing</li>
+              <li>Marketing &amp; Sales</li>
+              <li>Business Law &amp; Ethics</li>
+              <li>Entrepreneurship Development</li>
+            </ul>
+            <p><strong>Annual Fee:</strong> NPR 60,000</p>
+            <p><strong>Seats Available:</strong> 100</p>
+            <a href="#admissions">Apply for BBS</a>
+          </article>
+
+          <!-- BIM Program -->
+          <article id="program-bim" class="program-card">
+            <header>
+              <img
+                src="https://placehold.co/80x80?text=BIM"
+                alt="BIM program icon"
+                width="80"
+                height="80"
+              />
+              <h3>Bachelor of Information Management (BIM)</h3>
+              <p class="program-duration">4 Years &bull; 8 Semesters</p>
+            </header>
+            <p>
+              Bridging the gap between technology and business, BIM prepares
+              students to manage information systems, lead digital
+              transformation, and drive data-driven decision-making in
+              organizations.
+            </p>
+            <ul>
+              <li>Information Systems Management</li>
+              <li>Business Intelligence &amp; Analytics</li>
+              <li>E-Commerce &amp; Digital Marketing</li>
+              <li>Systems Analysis &amp; Design</li>
+              <li>IT Project Management</li>
+            </ul>
+            <p><strong>Annual Fee:</strong> NPR 1,00,000</p>
+            <p><strong>Seats Available:</strong> 60</p>
+            <a href="#admissions">Apply for BIM</a>
+          </article>
+
+          <!-- BIT Program -->
+          <article id="program-bit" class="program-card">
+            <header>
+              <img
+                src="https://placehold.co/80x80?text=BIT"
+                alt="BIT program icon"
+                width="80"
+                height="80"
+              />
+              <h3>Bachelor of Information Technology (BIT)</h3>
+              <p class="program-duration">4 Years &bull; 8 Semesters</p>
+            </header>
+            <p>
+              A technically intensive program covering software engineering,
+              systems programming, cybersecurity, and emerging technologies like
+              cloud computing and artificial intelligence.
+            </p>
+            <ul>
+              <li>Software Engineering</li>
+              <li>Operating Systems &amp; Architecture</li>
+              <li>Cybersecurity &amp; Ethical Hacking</li>
+              <li>Cloud Computing &amp; DevOps</li>
+              <li>Artificial Intelligence Fundamentals</li>
+            </ul>
+            <p><strong>Annual Fee:</strong> NPR 1,30,000</p>
+            <p><strong>Seats Available:</strong> 48</p>
+            <a href="#admissions">Apply for BIT</a>
+          </article>
+
+          <!-- BSc CSIT Program -->
+          <article id="program-bsc" class="program-card">
+            <header>
+              <img
+                src="https://placehold.co/80x80?text=BSc"
+                alt="BSc CSIT program icon"
+                width="80"
+                height="80"
+              />
+              <h3>
+                B.Sc. Computer Science &amp; Information Technology (CSIT)
+              </h3>
+              <p class="program-duration">4 Years &bull; 8 Semesters</p>
+            </header>
+            <p>
+              The most rigorous computer science degree in Nepal, offering a
+              strong foundation in algorithms, mathematics, and advanced
+              programming alongside applied research and industrial projects.
+            </p>
+            <ul>
+              <li>Discrete Mathematics &amp; Algorithms</li>
+              <li>Theory of Computation</li>
+              <li>Advanced Programming (C++, Java)</li>
+              <li>Machine Learning &amp; Data Science</li>
+              <li>Research Project &amp; Thesis</li>
+            </ul>
+            <p><strong>Annual Fee:</strong> NPR 1,40,000</p>
+            <p><strong>Seats Available:</strong> 48</p>
+            <a href="#admissions">Apply for BSc CSIT</a>
+          </article>
+
+          <!-- MBA Program -->
+          <article id="program-mba" class="program-card">
+            <header>
+              <img
+                src="https://placehold.co/80x80?text=MBA"
+                alt="MBA program icon"
+                width="80"
+                height="80"
+              />
+              <h3>Master of Business Administration (MBA)</h3>
+              <p class="program-duration">2 Years &bull; 4 Semesters</p>
+            </header>
+            <p>
+              Our flagship postgraduate program designed for working
+              professionals and fresh graduates seeking leadership roles in
+              Nepal's rapidly growing corporate and entrepreneurship ecosystem.
+            </p>
+            <ul>
+              <li>Strategic Management</li>
+              <li>Financial Management &amp; Investment</li>
+              <li>Human Resource Management</li>
+              <li>Operations &amp; Supply Chain</li>
+              <li>Capstone Business Project</li>
+            </ul>
+            <p><strong>Annual Fee:</strong> NPR 1,80,000</p>
+            <p><strong>Seats Available:</strong> 40</p>
+            <a href="#admissions">Apply for MBA</a>
+          </article>
+        </div>
+        <!-- end #programs-grid -->
+
+        <!-- Programs CTA -->
+        <div id="programs-cta">
+          <p>Not sure which program is right for you?</p>
+          <a href="#contact" role="button">Talk to Our Counselor</a>
+          <a href="#admissions" role="button">Download Brochure</a>
+        </div>
+      </section>
+      <!-- PROGRAMS SECTION END -->
+
+      <!-- ============================================================
+         ADMISSIONS SECTION START
+         Contains: Process, Requirements, Important Dates, Scholarships
+    ============================================================ -->
+      <section id="admissions" aria-labelledby="admissions-heading">
+        <header>
+          <h2 id="admissions-heading">Admissions 2083 B.S. / 2024 A.D.</h2>
+          <p>Your journey to excellence begins here</p>
+        </header>
+
+        <!-- Admissions Overview -->
+        <div id="admissions-overview">
+          <p>
+            Himalaya College welcomes applications from students who have
+            completed their +2 (Grade 12) or equivalent examination from any
+            recognized board in Nepal or abroad. Our admissions process is
+            transparent, merit-based, and designed to identify students with
+            genuine potential and passion.
+          </p>
+        </div>
+
+        <!-- How to Apply Process -->
+        <div id="admissions-process">
+          <h3>How to Apply — Step by Step</h3>
+
+          <ol>
+            <li>
+              <strong>Step 1: Fill the Application Form</strong>
+              Download the form from our office or collect it from the admin
+              desk. Fill all details carefully in block letters.
+            </li>
+            <li>
+              <strong>Step 2: Attach Required Documents</strong>
+              Compile all required documents as listed below and attach them
+              with the completed application form.
+            </li>
+            <li>
+              <strong>Step 3: Submit &amp; Pay Application Fee</strong>
+              Submit the form at the admissions office along with NPR 1,000
+              application fee (non-refundable).
+            </li>
+            <li>
+              <strong>Step 4: Entrance Examination</strong>
+              Appear for the entrance examination on the scheduled date. Admit
+              card will be issued upon successful form submission.
+            </li>
+            <li>
+              <strong>Step 5: Merit List &amp; Counseling</strong>
+              Results will be published within 7 working days. Shortlisted
+              students will be called for counseling and seat confirmation.
+            </li>
+            <li>
+              <strong>Step 6: Enrollment &amp; Fee Payment</strong>
+              Pay the first semester/year fee and complete enrollment
+              formalities to officially secure your seat.
+            </li>
+          </ol>
+        </div>
+        <!-- end #admissions-process -->
+
+        <!-- Requirements -->
+        <div id="admissions-requirements">
+          <h3>Eligibility &amp; Required Documents</h3>
+
+          <article id="eligibility">
+            <h4>Eligibility Criteria</h4>
+            <ul>
+              <li>
+                Passed +2 / Grade 12 from a NEB-recognized institution or
+                equivalent
+              </li>
+              <li>
+                Minimum GPA 2.0 (for management programs) or GPA 2.4 (for
+                technology programs)
+              </li>
+              <li>Must have studied Mathematics (for BCA, BIT, BSc CSIT)</li>
+              <li>Age: Minimum 16 years as of Baishakh 1, 2083 B.S.</li>
+            </ul>
+          </article>
+
+          <article id="required-documents">
+            <h4>Required Documents</h4>
+            <ul>
+              <li>Completed application form (available at college office)</li>
+              <li>Grade 12 mark sheet (original + 2 photocopies)</li>
+              <li>Grade 12 character certificate</li>
+              <li>SLC / SEE mark sheet and certificate</li>
+              <li>Citizenship certificate or birth certificate (+ 2 copies)</li>
+              <li>4 passport-sized photographs (recent, white background)</li>
+              <li>Migration certificate (if from outside Bagmati Province)</li>
+              <li>Equivalence certificate (for foreign students)</li>
+            </ul>
+          </article>
+        </div>
+        <!-- end #admissions-requirements -->
+
+        <!-- Important Dates -->
+        <div id="admissions-dates">
+          <h3>Important Dates — 2083 B.S.</h3>
+          <table>
+            <caption>
+              Admission Schedule for Academic Year 2081–82 B.S.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Event</th>
+                <th scope="col">Date (Nepali)</th>
+                <th scope="col">Date (English)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Form Distribution Begins</td>
+                <td>Baishakh 1, 2081</td>
+                <td>April 14, 2024</td>
+              </tr>
+              <tr>
+                <td>Last Date for Form Submission</td>
+                <td>Baishakh 30, 2081</td>
+                <td>May 13, 2024</td>
+              </tr>
+              <tr>
+                <td>Entrance Examination</td>
+                <td>Jestha 15, 2081</td>
+                <td>May 29, 2024</td>
+              </tr>
+              <tr>
+                <td>Results Publication</td>
+                <td>Jestha 25, 2081</td>
+                <td>June 8, 2024</td>
+              </tr>
+              <tr>
+                <td>Counseling &amp; Enrollment</td>
+                <td>Ashadh 1–10, 2081</td>
+                <td>June 15–25, 2024</td>
+              </tr>
+              <tr>
+                <td>Classes Begin</td>
+                <td>Ashadh 15, 2081</td>
+                <td>June 29, 2024</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- end #admissions-dates -->
+
+        <!-- Scholarships -->
+        <div id="admissions-scholarships">
+          <h3>Scholarships &amp; Financial Aid</h3>
+          <p>
+            We believe financial constraints should never stand in the way of
+            quality education. Himalaya College offers the following
+            scholarships:
+          </p>
+          <ul>
+            <li>
+              <strong>Merit Scholarship (25% fee waiver):</strong>
+              Students scoring GPA 3.6+ in Grade 12
+            </li>
+            <li>
+              <strong>Sports Scholarship (20% fee waiver):</strong>
+              National or district-level sports achievers
+            </li>
+            <li>
+              <strong>Government Quota Scholarships:</strong>
+              As per TU and UGC allocation for marginalized communities
+            </li>
+            <li>
+              <strong>Staff Dependent Discount (50% fee waiver):</strong>
+              Children of permanent Himalaya College staff
+            </li>
+            <li>
+              <strong>Sibling Discount (10%):</strong>
+              For siblings of currently enrolled students
+            </li>
+          </ul>
+          <a href="#contact" role="button">Inquire About Scholarships</a>
+        </div>
+        <!-- end #admissions-scholarships -->
+      </section>
+      <!-- ADMISSIONS SECTION END -->
+
+      <!-- ============================================================
+         FACILITIES SECTION START
+         Contains: Library, Labs, Sports, Cafeteria, Hostel, etc.
+    ============================================================ -->
+      <section id="facilities" aria-labelledby="facilities-heading">
+        <header>
+          <h2 id="facilities-heading">Campus Facilities</h2>
+          <p>A complete environment designed for learning, growth, and life</p>
+        </header>
+
+        <div id="facilities-grid">
+          <!-- Library -->
+          <article class="facility-card" id="facility-library">
+            <img
+              src="images/Central Library.webp"
+              alt="Himalaya College central library interior showing bookshelves and reading area"
+              width="300"
+              height="200"
+            />
+            <h3>Central Library</h3>
+            <p>
+              Our fully air-conditioned library houses over 25,000 books,
+              journals, and digital resources. Open from 7 AM to 8 PM, six days
+              a week, with dedicated reading halls for quiet study.
+            </p>
+            <ul>
+              <li>25,000+ books and journals</li>
+              <li>Digital library &amp; e-resources access</li>
+              <li>200-seat reading capacity</li>
+              <li>Photocopying and printing services</li>
+            </ul>
+          </article>
+
+          <!-- Computer Labs -->
+          <article class="facility-card" id="facility-labs">
+            <img
+              src="images/Computer Laboratories.jpg"
+              alt="Students working in the computer laboratory"
+              width="300"
+              height="200"
+            />
+            <h3>Computer Laboratories</h3>
+            <p>
+              Six state-of-the-art computer labs equipped with the latest
+              hardware and software. High-speed internet connectivity ensures
+              students have access to global learning resources.
+            </p>
+            <ul>
+              <li>6 labs with 200+ workstations total</li>
+              <li>100 Mbps fiber internet (UPC Nepal)</li>
+              <li>Licensed software: MS Office, Adobe, IDEs</li>
+              <li>Open access during all college hours</li>
+            </ul>
+          </article>
+
+          <!-- Sports Facilities -->
+          <article class="facility-card" id="facility-sports">
+            <img
+              src="images/Sports Recreation.jpg"
+              alt="College sports ground with students playing cricket"
+              width="300"
+              height="200"
+            />
+            <h3>Sports &amp; Recreation</h3>
+            <p>
+              We believe in holistic development. Our sports complex supports
+              multiple disciplines and our teams regularly compete at
+              inter-college and national levels.
+            </p>
+            <ul>
+              <li>Cricket &amp; Football ground</li>
+              <li>Basketball &amp; Volleyball courts</li>
+              <li>Indoor badminton hall</li>
+              <li>Table tennis &amp; carrom rooms</li>
+              <li>Fitness center with modern equipment</li>
+            </ul>
+          </article>
+
+          <!-- Cafeteria -->
+          <article class="facility-card" id="facility-cafeteria">
+            <img
+              src="images/Cafeteria Canteen.jpg"
+              alt="College cafeteria with students dining"
+              width="300"
+              height="200"
+            />
+            <h3>Cafeteria &amp; Canteen</h3>
+            <p>
+              Our spacious cafeteria serves hygienic, affordable Nepali and
+              continental meals throughout the day. Special dietary options are
+              available for students with specific needs.
+            </p>
+            <ul>
+              <li>Capacity: 300 students at a time</li>
+              <li>Nepali, Indian, and continental menu</li>
+              <li>Vegetarian &amp; non-vegetarian options</li>
+              <li>Subsidized meal plans for enrolled students</li>
+            </ul>
+          </article>
+
+          <!-- Hostel -->
+          <article class="facility-card" id="facility-hostel">
+            <img
+              src="images/Student Hostel.jpeg"
+              alt="College hostel building exterior"
+              width="300"
+              height="200"
+            />
+            <h3>Student Hostel</h3>
+            <p>
+              Safe, comfortable, and affordable hostel accommodation is
+              available for outstation students. Separate facilities for male
+              and female students with 24-hour security.
+            </p>
+            <ul>
+              <li>150 beds (separate boys/girls blocks)</li>
+              <li>Wi-Fi enabled rooms</li>
+              <li>Attached bathrooms and hot water</li>
+              <li>Warden and 24-hour security</li>
+              <li>Monthly fee: NPR 8,000 (inclusive of meals)</li>
+            </ul>
+          </article>
+
+          <!-- Other Facilities -->
+          <article class="facility-card" id="facility-other">
+            <img
+              src="images/Other Campus Facilities.jpeg"
+              alt="College auditorium hall during an event"
+              width="300"
+              height="200"
+            />
+            <h3>Other Campus Facilities</h3>
+            <p>
+              Beyond academics, our campus provides everything needed for a
+              productive and comfortable college experience.
+            </p>
+            <ul>
+              <li>500-seat auditorium for events</li>
+              <li>Medical room with nurse on duty</li>
+              <li>Banking counter (NMB Bank)</li>
+              <li>Photocopy &amp; stationery shop</li>
+              <li>Free Wi-Fi across campus</li>
+              <li>Parking for 200+ vehicles</li>
+            </ul>
+          </article>
+        </div>
+        <!-- end #facilities-grid -->
+      </section>
+      <!-- FACILITIES SECTION END -->
+
+      <!-- ============================================================
+         TESTIMONIALS SECTION START
+         Contains: Student and alumni reviews
+    ============================================================ -->
+      <section id="testimonials" aria-labelledby="testimonials-heading">
+        <header>
+          <h2 id="testimonials-heading">What Our Students Say</h2>
+          <p>Hear from the Himalaya College community</p>
+        </header>
+
+        <div id="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <article class="testimonial-card">
+            <blockquote>
+              <p>
+                "Studying BCA at Himalaya College was the best decision of my
+                life. The faculty are not just teachers — they are mentors who
+                genuinely care about your growth. The labs and project-based
+                learning gave me skills that my employer valued immediately."
+              </p>
+            </blockquote>
+            <footer>
+              <img
+                src="https://placehold.co/60x60?text=RK"
+                alt="Portrait of Rohan Karmacharya, BCA 2022 graduate"
+                width="60"
+                height="60"
+              />
+              <cite>
+                <strong>Rohan Karmacharya</strong><br />
+                BCA Graduate, 2022 &bull; Software Developer at Fusemachines,
+                Kathmandu
+              </cite>
+            </footer>
+          </article>
+
+          <!-- Testimonial 2 -->
+          <article class="testimonial-card">
+            <blockquote>
+              <p>
+                "The MBA program here transformed my thinking completely. The
+                case studies, industry visits, and guest lectures from Nepal's
+                top business leaders gave me a 360-degree understanding of the
+                market. I launched my own startup within a year of graduating."
+              </p>
+            </blockquote>
+            <footer>
+              <img
+                src="https://placehold.co/60x60?text=SP"
+                alt="Portrait of Srijana Pandey, MBA 2021 graduate"
+                width="60"
+                height="60"
+              />
+              <cite>
+                <strong>Srijana Pandey</strong><br />
+                MBA Graduate, 2021 &bull; Co-Founder, TechDidi Pvt. Ltd.,
+                Lalitpur
+              </cite>
+            </footer>
+          </article>
+
+          <!-- Testimonial 3 -->
+          <article class="testimonial-card">
+            <blockquote>
+              <p>
+                "As a student from Dhankuta, I was initially nervous about
+                moving to Kathmandu. But the hostel community and the supportive
+                environment here made it feel like home. The BSc CSIT program is
+                rigorous but incredibly rewarding."
+              </p>
+            </blockquote>
+            <footer>
+              <img
+                src="https://placehold.co/60x60?text=AT"
+                alt="Portrait of Aashish Tamang, BSc CSIT current student"
+                width="60"
+                height="60"
+              />
+              <cite>
+                <strong>Aashish Tamang</strong><br />
+                BSc CSIT, 3rd Year &bull; From Dhankuta, Eastern Nepal
+              </cite>
+            </footer>
+          </article>
+        </div>
+        <!-- end #testimonials-grid -->
+      </section>
+      <!-- TESTIMONIALS SECTION END -->
+
+      <!-- ============================================================
+         NEWS / EVENTS SECTION START
+         Contains: Latest notices, upcoming events, important updates
+    ============================================================ -->
+      <section id="news" aria-labelledby="news-heading">
+        <header>
+          <h2 id="news-heading">News &amp; Events</h2>
+          <p>Stay updated with the latest from Himalaya College</p>
+        </header>
+
+        <div id="news-layout">
+          <!-- Latest News Column -->
+          <div id="latest-news">
+            <h3>Latest News</h3>
+
+            <article class="news-card">
+              <time datetime="2024-04-20">Baishakh 8, 2081</time>
+              <h4>
+                <a href="#"
+                  >Himalaya College Ranks Top 10 in TU Results for BCA 2080</a
+                >
+              </h4>
+              <p>
+                Our BCA department achieved outstanding results in the 2080
+                Tribhuvan University examinations, with 12 students scoring
+                distinction and 45 students securing first division.
+              </p>
+              <a href="#">Read Full Story</a>
+            </article>
+
+            <article class="news-card">
+              <time datetime="2024-04-10">Chaitra 28, 2080</time>
+              <h4>
+                <a href="#"
+                  >MOU Signed with Infosys BPO Nepal for Student Internships</a
+                >
+              </h4>
+              <p>
+                In a landmark agreement, Himalaya College has formalized an
+                internship partnership with Infosys BPO Nepal, ensuring
+                guaranteed placement opportunities for final-year technology
+                students.
+              </p>
+              <a href="#">Read Full Story</a>
+            </article>
+
+            <article class="news-card">
+              <time datetime="2024-03-25">Chaitra 12, 2080</time>
+              <h4>
+                <a href="#"
+                  >Annual Tech Fest "Innovate Nepal 2080" Concludes
+                  Successfully</a
+                >
+              </h4>
+              <p>
+                Over 500 students from 20 colleges across the valley
+                participated in our annual technology festival featuring
+                hackathons, project exhibitions, and guest talks from industry
+                leaders.
+              </p>
+              <a href="#">Read Full Story</a>
+            </article>
+          </div>
+          <!-- end #latest-news -->
+
+          <!-- Upcoming Events Column -->
+          <div id="upcoming-events">
+            <h3>Upcoming Events</h3>
+
+            <article class="event-card">
+              <div class="event-date">
+                <span class="event-day">15</span>
+                <span class="event-month">Jestha</span>
+              </div>
+              <div class="event-info">
+                <h4>Entrance Examination 2081</h4>
+                <p>All programs &bull; Venue: Main Campus, Block A</p>
+                <p>Time: 10:00 AM – 12:00 PM</p>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-date">
+                <span class="event-day">22</span>
+                <span class="event-month">Jestha</span>
+              </div>
+              <div class="event-info">
+                <h4>Career Counseling Seminar</h4>
+                <p>Open to all students &bull; Auditorium Hall</p>
+                <p>Guest Speaker: Mr. Dipak Bista, CEO – YoungInnovations</p>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-date">
+                <span class="event-day">1</span>
+                <span class="event-month">Ashadh</span>
+              </div>
+              <div class="event-info">
+                <h4>New Student Orientation Day</h4>
+                <p>Batch 2081 Welcome &bull; Main Auditorium</p>
+                <p>9:00 AM onwards &bull; Parents welcome</p>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-date">
+                <span class="event-day">10</span>
+                <span class="event-month">Ashadh</span>
+              </div>
+              <div class="event-info">
+                <h4>Annual Sports Meet — "Himalaya Cup 2081"</h4>
+                <p>All departments &bull; Sports Ground</p>
+                <p>Registration open at sports office</p>
+              </div>
+            </article>
+          </div>
+          <!-- end #upcoming-events -->
+
+          <!-- Important Notices -->
+          <aside id="notice-board" aria-label="Important notices">
+            <h3>📋 Notice Board</h3>
+            <ul>
+              <li>
+                <strong>[URGENT]</strong>
+                <a href="#"
+                  >Last date to submit 2080 examination forms: Baishakh 30</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  >Revised academic calendar for 2083 B.S. published</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  >Library membership renewal for 2081 — deadline Jestha 10</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  >Hostel allotment form for 2081 intake now available</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  >NEB scholarship application support available at admin
+                  office</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  >Result of BBS 3rd Year (2079) now available on TU website</a
+                >
+              </li>
+            </ul>
+            <a href="#">View All Notices</a>
+          </aside>
+        </div>
+        <!-- end #news-layout -->
+      </section>
+      <!-- NEWS / EVENTS SECTION END -->
+
+      <!-- ============================================================
+         GALLERY SECTION START
+         Contains: Campus photos with placeholder images
+    ============================================================ -->
+      <section id="gallery" aria-labelledby="gallery-heading">
+        <header>
+          <h2 id="gallery-heading">Campus Gallery</h2>
+          <p>A glimpse into life at Himalaya College</p>
+        </header>
+
+        <!-- Gallery Filter Tabs (for Phase 2 JS) -->
+        <nav id="gallery-filter" aria-label="Gallery categories">
+          <ul>
+            <li><a href="#gallery-all">All</a></li>
+            <li><a href="#gallery-campus">Campus</a></li>
+            <li><a href="#gallery-events">Events</a></li>
+            <li><a href="#gallery-sports">Sports</a></li>
+            <li><a href="#gallery-labs">Labs</a></li>
           </ul>
         </nav>
-        <form class="search-form" action="#" method="get">
-          <input
-            type="search"
-            placeholder="Search courses, faculty, events..."
-            aria-label="Search"
-          />
-          <button type="submit">🔍</button>
-        </form>
-      </div>
-    </header>
 
-    <!-- ==================== HERO SECTION with background image & video placeholder ==================== -->
-    <section id="home" class="hero">
-      <!-- Background video / image -->
-      <img
-        src="https://placehold.co/1920x600?text=XYZ+College+Campus+-+Kathmandu+Valley"
-        alt="XYZ College Hero Campus View"
-        width="100%"
-        style="display: block; max-width: 100%"
-      />
-      <div class="hero-content">
-        <h1>Welcome to XYZ College, Nepal</h1>
-        <p>
-          Shaping future leaders through quality education, research & global
-          exposure
-        </p>
-        <div class="hero-buttons">
-          <a href="#admissions" class="btn-primary">Apply Now →</a>
-          <a href="#programs" class="btn-secondary">Explore Programs</a>
-          <a href="#virtual-tour" class="btn-outline">🎥 360° Campus Tour</a>
+        <!-- Gallery Grid -->
+        <div id="gallery-grid" aria-label="Photo gallery">
+          <figure class="gallery-item">
+            <img
+              src="images/Main Campus Entrance.avif"
+              alt="Main entrance gate of Himalaya College with students entering"
+              width="400"
+              height="280"
+              loading="lazy"
+            />
+            <figcaption>Main Campus Entrance</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/Smart Classroom.jpeg"
+              alt="Modern smart classroom with projector and students attending lecture"
+              width="400"
+              height="280"
+              loading="lazy"
+            />
+            <figcaption>Smart Classroom</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/Graduation Ceremony 2080.jpg"
+              alt="Students in graduation gowns receiving diplomas at annual ceremony"
+              width="400"
+              height="280"
+              loading="lazy"
+            />
+            <figcaption>Graduation Ceremony 2080</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/Innovate Nepal Tech Fest.webp"
+              alt="Students presenting their projects at the annual technology festival"
+              width="400"
+              height="280"
+              loading="lazy"
+            />
+            <figcaption>Innovate Nepal Tech Fest</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/Inter-College Football Tournament.jpg"
+              alt="Students playing football in the college sports ground"
+              width="400"
+              height="280"
+              loading="lazy"
+            />
+            <figcaption>Inter-College Football Tournament</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/Programming Laboratory.jpg"
+              alt="Students working on computers in the programming laboratory"
+              width="400"
+              height="280"
+              loading="lazy"
+            />
+            <figcaption>Programming Laboratory</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/Annual Cultural Program.jpg"
+              alt="Students performing traditional Nepali dance at annual cultural event"
+              width="400"
+              height="280"
+              loading="lazy"
+            />
+            <figcaption>Annual Cultural Program</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/Central Library Study Area.jpg"
+              alt="Students studying in the college central library"
+              width="400"
+              height="280"
+              loading="lazy"
+            />
+            <figcaption>Central Library Study Area</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/Guest Lecture Series.jpg"
+              alt="Industry expert delivering guest lecture in the auditorium"
+              width="400"
+              height="280"
+              loading="lazy"
+            />
+            <figcaption>Guest Lecture Series</figcaption>
+          </figure>
         </div>
-      </div>
-    </section>
+        <!-- end #gallery-grid -->
 
-    <!-- ==================== STATS COUNTERS + IMAGES (more visuals) ==================== -->
-    <section class="stats-section">
-      <div class="container">
-        <div class="stat-item">
-          <img
-            src="https://placehold.co/80x80?text=6500+Students"
-            alt="Students icon"
-            width="70"
-            height="70"
-          />
-          <h3>6500+</h3>
-          <p>Enrolled Students</p>
+        <div id="gallery-cta">
+          <a href="#" role="button">View Full Gallery</a>
         </div>
-        <div class="stat-item">
-          <img
-            src="https://placehold.co/80x80?text=120+Faculty"
-            alt="Faculty icon"
-            width="70"
-            height="70"
-          />
-          <h3>120+</h3>
-          <p>Expert Faculty</p>
-        </div>
-        <div class="stat-item">
-          <img
-            src="https://placehold.co/80x80?text=35+Programs"
-            alt="Programs icon"
-            width="70"
-            height="70"
-          />
-          <h3>35+</h3>
-          <p>Degree Programs</p>
-        </div>
-        <div class="stat-item">
-          <img
-            src="https://placehold.co/80x80?text=25+Years"
-            alt="Years icon"
-            width="70"
-            height="70"
-          />
-          <h3>25+ Years</h3>
-          <p>Educational Excellence</p>
-        </div>
-      </div>
-    </section>
+      </section>
+      <!-- GALLERY SECTION END -->
 
-    <!-- ==================== ABOUT SECTION (more content + images) ==================== -->
-    <section id="about" class="about-section">
-      <div class="container">
-        <img
-          src="https://placehold.co/600x400?text=XYZ+College+Main+Building"
-          alt="XYZ College Main Academic Block"
-          width="100%"
-        />
-        <h2>About XYZ College – A Premier Nepal Institution</h2>
-        <p>
-          Established in 1998, XYZ College is one of Nepal’s most respected
-          institutions affiliated with Tribhuvan University (TU) and Purbanchal
-          University. Our mission is to foster innovation, critical thinking,
-          and employability. With state-of-the-art labs, a central library with
-          50k+ books, and collaborations with universities in Japan, Australia,
-          and India, we provide globally competitive education.
-        </p>
-        <img
-          src="https://placehold.co/600x300?text=Library+and+Research+Center"
-          alt="Library and research center"
-          width="48%"
-        />
-        <img
-          src="https://placehold.co/600x300?text=IT+Lab+&+AI+Research"
-          alt="IT Lab"
-          width="48%"
-        />
-        <p>
-          We take pride in our 95% placement rate and notable alumni working in
-          Google, Nepali Army, Esewa, and World Bank. XYZ College is not just a
-          campus; it's a launchpad for future leaders.
-        </p>
-      </div>
-    </section>
+      <!-- ============================================================
+         CONTACT SECTION START
+         Contains: Address, phone, email, map placeholder, contact form
+    ============================================================ -->
+      <section id="contact" aria-labelledby="contact-heading">
+        <header>
+          <h2 id="contact-heading">Contact Us</h2>
+          <p>We're here to help — reach out anytime</p>
+        </header>
 
-    <!-- ==================== PROGRAMS (with images for each program) ==================== -->
-    <section id="programs" class="programs-section">
-      <div class="container">
-        <h2>Our Flagship Academic Programs</h2>
-        <div class="program-grid">
-          <div class="program-card">
-            <img
-              src="https://placehold.co/300x180?text=BCA+Program"
-              alt="BCA Computer Applications"
-              width="100%"
-            />
-            <h3>Bachelor of Computer Applications (BCA)</h3>
-            <p>
-              AI, Data Science, Cloud Computing, and modern software practices.
-              Affiliated with TU.
-            </p>
-          </div>
-          <div class="program-card">
-            <img
-              src="https://placehold.co/300x180?text=BIM+Program"
-              alt="BIM Information Management"
-              width="100%"
-            />
-            <h3>BIM – Information Management</h3>
-            <p>Blend of business & IT — ERP, Business Analytics, E-commerce.</p>
-          </div>
-          <div class="program-card">
-            <img
-              src="https://placehold.co/300x180?text=BBS+Program"
-              alt="BBS Business Studies"
-              width="100%"
-            />
-            <h3>BBS (Bachelor of Business Studies)</h3>
-            <p>Finance, Marketing, HR – Case-based learning & internships.</p>
-          </div>
-          <div class="program-card">
-            <img
-              src="https://placehold.co/300x180?text=CSIT+Program"
-              alt="CSIT program"
-              width="100%"
-            />
-            <h3>B.Sc. CSIT</h3>
-            <p>
-              Computer Science & IT – intensive programming, research projects.
-            </p>
-          </div>
-          <div class="program-card">
-            <img
-              src="https://placehold.co/300x180?text=MBA+Nepal"
-              alt="MBA Program"
-              width="100%"
-            />
-            <h3>MBA & MCA</h3>
-            <p>Postgraduate degrees with corporate mentorship.</p>
-          </div>
-          <div class="program-card">
-            <img
-              src="https://placehold.co/300x180?text=+2+Management"
-              alt="+2 Management"
-              width="100%"
-            />
-            <h3>+2 Programs (Science, Management, Humanities)</h3>
-            <p>High school with excellent results & scholarship schemes.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <div id="contact-layout">
+          <!-- Contact Information -->
+          <div id="contact-info">
+            <h3>Get In Touch</h3>
 
-    <!-- ==================== DEPARTMENTS (rich UI with images and real depts of Nepal) ==================== -->
-    <section id="departments" class="departments-section">
-      <div class="container">
-        <h2>Departments at XYZ College</h2>
-        <div class="dept-grid">
-          <div class="dept-card">
-            <img
-              src="https://placehold.co/200x150?text=IT+Dept"
-              alt="IT Department"
-            />
-            <h3>Information Technology</h3>
-            <p>Cyber Security, AI, Full-stack labs.</p>
-          </div>
-          <div class="dept-card">
-            <img
-              src="https://placehold.co/200x150?text=Management"
-              alt="Management Department"
-            />
-            <h3>Management Studies</h3>
-            <p>Finance, Entrepreneurship, Marketing.</p>
-          </div>
-          <div class="dept-card">
-            <img
-              src="https://placehold.co/200x150?text=Humanities"
-              alt="Humanities"
-            />
-            <h3>Humanities & Social Sciences</h3>
-            <p>Mass Comm, Psychology, Sociology.</p>
-          </div>
-          <div class="dept-card">
-            <img
-              src="https://placehold.co/200x150?text=Science+Dept"
-              alt="Science Department"
-            />
-            <h3>Physical & Life Sciences</h3>
-            <p>Biotech, Microbiology, Physics lab.</p>
-          </div>
-          <div class="dept-card">
-            <img
-              src="https://placehold.co/200x150?text=Law+Dept"
-              alt="Law department"
-            />
-            <h3>Law & Governance</h3>
-            <p>BA LLB, Legal Aid Clinic.</p>
-          </div>
-          <div class="dept-card">
-            <img
-              src="https://placehold.co/200x150?text=Research+Center"
-              alt="Research"
-            />
-            <h3>Research & Development</h3>
-            <p>Innovation hub, funded projects.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== FACULTY SHOWCASE (with photos) ==================== -->
-    <section class="faculty-section">
-      <div class="container">
-        <h2>Meet Our Esteemed Faculty</h2>
-        <div class="faculty-list">
-          <div class="faculty">
-            <img
-              src="https://placehold.co/200x200?text=Dr.+Sharma"
-              alt="Dr. Sharma - IT Head"
-            />
-            <h3>Prof. Dr. Rajesh Sharma</h3>
-            <p>PhD, IIT Delhi | Head of IT & AI Research</p>
-          </div>
-          <div class="faculty">
-            <img
-              src="https://placehold.co/200x200?text=Prof.+Karki"
-              alt="Ms. Karki"
-            />
-            <h3>Prof. Sunita Karki</h3>
-            <p>MBA, Finance | Dean, School of Business</p>
-          </div>
-          <div class="faculty">
-            <img
-              src="https://placehold.co/200x200?text=Dr.+Thapa"
-              alt="Dr. Thapa"
-            />
-            <h3>Dr. Bikram Thapa</h3>
-            <p>Coordinator, BCA Program | Cloud Architect</p>
-          </div>
-          <div class="faculty">
-            <img
-              src="https://placehold.co/200x200?text=Prof.+Gurung"
-              alt="Prof. Gurung"
-            />
-            <h3>Prof. Anjali Gurung</h3>
-            <p>Research Lead, Social Sciences</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== ADMISSIONS 2026 (step by step + images) ==================== -->
-    <section id="admissions" class="admissions-section">
-      <div class="container">
-        <h2>Admissions 2026 – Join XYZ College Family</h2>
-        <div class="admissions-grid">
-          <div class="requirements">
-            <img
-              src="https://placehold.co/400x250?text=Entrance+Exam+2026"
-              alt="Admission process"
-              width="100%"
-            />
-            <h3>Eligibility & Requirements</h3>
-            <ul>
-              <li>+2 or equivalent (min 45% aggregate) for Bachelor's</li>
-              <li>Entrance Exam conducted by XYZ / TU</li>
-              <li>
-                Documents: transcripts, citizenship, photos, recommendation
-                letter
-              </li>
-              <li>International students: passport & equivalence</li>
-            </ul>
-          </div>
-          <div class="process">
-            <img
-              src="https://placehold.co/400x250?text=Apply+Online"
-              alt="Online application"
-              width="100%"
-            />
-            <h3>Application Process</h3>
-            <ol>
-              <li>Fill online application form (free)</li>
-              <li>Appear for XYZ Entrance Test (June 2026)</li>
-              <li>Merit list & interview (for scholarships)</li>
-              <li>Final enrollment & orientation</li>
-            </ol>
-            <a href="#">👉 Download Admission Brochure 2026</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== CAMPUS LIFE & EVENTS (gallery-like) ==================== -->
-    <section id="campus-life" class="events-section">
-      <div class="container">
-        <h2>Life at XYZ College: Events, Sports & Culture</h2>
-        <div class="events-grid">
-          <div class="event-card">
-            <img
-              src="https://placehold.co/400x250?text=Tech+Fest+2025"
-              alt="Tech Fest"
-            />
-            <h3>Annual Tech Fest "Xplore"</h3>
-            <p>
-              Hackathon, robotics exhibition, and coding competition with 50+
-              colleges.
-            </p>
-          </div>
-          <div class="event-card">
-            <img
-              src="https://placehold.co/400x250?text=Sports+Week"
-              alt="Sports Week"
-            />
-            <h3>Inter-College Sports Meet</h3>
-            <p>Football, basketball, badminton, and athletic championships.</p>
-          </div>
-          <div class="event-card">
-            <img
-              src="https://placehold.co/400x250?text=Seminar+Series"
-              alt="Seminar"
-            />
-            <h3>Global Seminar Series</h3>
-            <p>
-              Industry leaders from Google, World Bank, and Ncell share
-              insights.
-            </p>
-          </div>
-          <div class="event-card">
-            <img
-              src="https://placehold.co/400x250?text=Cultural+Night"
-              alt="Cultural Night"
-            />
-            <h3>Cultural Extravaganza</h3>
-            <p>Showcasing Nepal’s diverse traditions, music, and dance.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== FAQ SECTION ==================== -->
-    <section class="faq-section">
-      <div class="container">
-        <h2>Frequently Asked Questions</h2>
-        <details>
-          <summary>What are the tuition fees for BCA/BIM programs?</summary>
-          <p>
-            Tuition fee ranges from NPR 3.5 Lakhs to 4.2 Lakhs for entire
-            program. Scholarships up to 50% based on entrance merit.
-          </p>
-        </details>
-        <details>
-          <summary>Does XYZ College provide hostel facilities?</summary>
-          <p>
-            Yes, separate modern hostels for boys and girls with Wi-Fi,
-            cafeteria, and 24/7 security.
-          </p>
-        </details>
-        <details>
-          <summary>
-            Is XYZ College affiliated with foreign universities?
-          </summary>
-          <p>
-            We have MoUs with University of Canberra (Australia), Chubu
-            University (Japan), and Purdue University (USA) for student
-            exchange.
-          </p>
-        </details>
-        <details>
-          <summary>How can I apply for a scholarship?</summary>
-          <p>
-            Merit-based, need-based, and sports quota scholarships are
-            available. Fill the scholarship form during admission.
-          </p>
-        </details>
-        <img
-          src="https://placehold.co/800x200?text=Scholarships+Available+for+2026"
-          alt="Scholarship banner"
-          width="100%"
-        />
-      </div>
-    </section>
-
-    <!-- ==================== NEWSLETTER SIGNUP ==================== -->
-    <section class="newsletter-section">
-      <div class="container">
-        <h2>Stay Updated with XYZ College</h2>
-        <form class="newsletter-form">
-          <input
-            type="email"
-            placeholder="Enter your email for prospectus & updates"
-            required
-          />
-          <button type="submit">Subscribe Now →</button>
-        </form>
-        <img
-          src="https://placehold.co/300x80?text=Join+Newsletter"
-          alt="newsletter icon"
-        />
-      </div>
-    </section>
-
-    <!-- ==================== CONTACT SECTION (with image, map reference) ==================== -->
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <h2>Get in Touch With XYZ College</h2>
-        <div class="contact-details">
-          <div>
-            <img
-              src="https://placehold.co/500x300?text=XYZ+College+Campus+Location"
-              alt="College location in Kathmandu"
-            />
             <address>
-              <strong>📍 Main Campus:</strong> New Baneshwor, Kathmandu, Nepal
-              <br />
-              <strong>📞 +977-1-5901234, +977-9801234567</strong><br />
-              <strong>✉️ admissions@xyzcollege.edu.np</strong><br />
-              <strong>🕒 Office Hours:</strong> Sun-Fri 9:00 AM – 5:00 PM
+              <div class="contact-detail">
+                <h4>📍 Address</h4>
+                <p>
+                  Himalaya College of Technology &amp; Management<br />
+                  Gwarko, Lalitpur – 3<br />
+                  Bagmati Province, Nepal
+                </p>
+              </div>
+
+              <div class="contact-detail">
+                <h4>📞 Phone</h4>
+                <p>
+                  Main: <a href="tel:+97715553000">+977-1-555-3000</a><br />
+                  Admissions: <a href="tel:+97715553001">+977-1-555-3001</a
+                  ><br />
+                  WhatsApp: <a href="tel:+9779801234567">+977 980-1234567</a>
+                </p>
+              </div>
+
+              <div class="contact-detail">
+                <h4>✉️ Email</h4>
+                <p>
+                  General:
+                  <a href="mailto:info@himalayacollege.edu.np"
+                    >info@himalayacollege.edu.np</a
+                  ><br />
+                  Admissions:
+                  <a href="mailto:admissions@himalayacollege.edu.np"
+                    >admissions@himalayacollege.edu.np</a
+                  ><br />
+                  Principal:
+                  <a href="mailto:principal@himalayacollege.edu.np"
+                    >principal@himalayacollege.edu.np</a
+                  >
+                </p>
+              </div>
+
+              <div class="contact-detail">
+                <h4>🕐 Office Hours</h4>
+                <p>
+                  Sunday – Friday: 7:00 AM – 5:00 PM<br />
+                  Saturday: 9:00 AM – 1:00 PM<br />
+                  Public Holidays: Closed
+                </p>
+              </div>
             </address>
+
+            <!-- Map Placeholder -->
+            <div id="map-placeholder">
+              <img
+                src="https://placehold.co/500x300?text=Map+of+Gwarko%2C+Lalitpur"
+                alt="Map showing location of Himalaya College at Gwarko, Lalitpur, Nepal"
+                width="500"
+                height="300"
+              />
+              <p>
+                <a
+                  href="https://maps.google.com/?q=Gwarko,Lalitpur,Nepal"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  📍 Open in Google Maps
+                </a>
+              </p>
+            </div>
+
+            <!-- How to Reach Us -->
+            <div id="directions">
+              <h4>How to Reach Us</h4>
+              <ul>
+                <li>
+                  From New Baneshwor: 15 min by tempo or bus (Gwarko route)
+                </li>
+                <li>From Ratnapark: Microbus to Gwarko (40 min)</li>
+                <li>From Patan Dhoka: 10 min by auto-rickshaw</li>
+                <li>Nearest landmark: Gwarko Chowk</li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <form class="contact-form">
-              <input type="text" placeholder="Full Name" required />
-              <input type="email" placeholder="Email Address" required />
-              <input type="tel" placeholder="Phone Number" />
-              <textarea
-                rows="5"
-                placeholder="Your message / inquiry about admissions"
-              ></textarea>
-              <button type="submit">Send Message</button>
+          <!-- end #contact-info -->
+
+          <!-- Contact Form -->
+          <div id="contact-form-wrapper">
+            <h3>Send Us a Message</h3>
+            <p>We'll respond within 1 business day</p>
+
+            <!-- Note: No JavaScript required; form submits via standard HTTP POST -->
+            <form
+              id="contact-form"
+              action="/submit-inquiry"
+              method="POST"
+              aria-labelledby="contact-form-heading"
+            >
+              <h4 id="contact-form-heading" hidden>Contact Inquiry Form</h4>
+
+              <!-- Full Name -->
+              <div class="form-group">
+                <label for="full-name"
+                  >Full Name <span aria-label="required">*</span></label
+                >
+                <input
+                  type="text"
+                  id="full-name"
+                  name="full_name"
+                  placeholder="e.g., Aarav Shrestha"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email"
+                  >Email Address <span aria-label="required">*</span></label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="yourname@example.com"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+
+              <!-- Phone -->
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+977-98XXXXXXXX"
+                  autocomplete="tel"
+                />
+              </div>
+
+              <!-- Inquiry Type -->
+              <div class="form-group">
+                <label for="inquiry-type"
+                  >Inquiry Type <span aria-label="required">*</span></label
+                >
+                <select id="inquiry-type" name="inquiry_type" required>
+                  <option value="" disabled selected>
+                    -- Select Inquiry Type --
+                  </option>
+                  <option value="admissions">Admissions &amp; Programs</option>
+                  <option value="fees">Fees &amp; Scholarships</option>
+                  <option value="hostel">Hostel &amp; Accommodation</option>
+                  <option value="results">Examination &amp; Results</option>
+                  <option value="general">General Information</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <!-- Program of Interest -->
+              <div class="form-group">
+                <label for="program-interest">Program of Interest</label>
+                <select id="program-interest" name="program_interest">
+                  <option value="" selected>
+                    -- Select Program (optional) --
+                  </option>
+                  <option value="bca">
+                    BCA – Bachelor of Computer Applications
+                  </option>
+                  <option value="bbs">
+                    BBS – Bachelor of Business Studies
+                  </option>
+                  <option value="bim">
+                    BIM – Bachelor of Information Management
+                  </option>
+                  <option value="bit">
+                    BIT – Bachelor of Information Technology
+                  </option>
+                  <option value="bsc-csit">
+                    BSc CSIT – Computer Science &amp; IT
+                  </option>
+                  <option value="mba">
+                    MBA – Master of Business Administration
+                  </option>
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div class="form-group">
+                <label for="message"
+                  >Your Message <span aria-label="required">*</span></label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Please describe your query in detail. We are happy to help!"
+                  required
+                ></textarea>
+              </div>
+
+              <!-- How did you hear about us -->
+              <fieldset>
+                <legend>How did you hear about Himalaya College?</legend>
+                <div class="radio-group">
+                  <input
+                    type="radio"
+                    id="source-friend"
+                    name="source"
+                    value="friend"
+                  />
+                  <label for="source-friend">Friend or Family</label>
+                </div>
+                <div class="radio-group">
+                  <input
+                    type="radio"
+                    id="source-social"
+                    name="source"
+                    value="social_media"
+                  />
+                  <label for="source-social">Social Media</label>
+                </div>
+                <div class="radio-group">
+                  <input
+                    type="radio"
+                    id="source-search"
+                    name="source"
+                    value="search_engine"
+                  />
+                  <label for="source-search">Google / Search Engine</label>
+                </div>
+                <div class="radio-group">
+                  <input
+                    type="radio"
+                    id="source-newspaper"
+                    name="source"
+                    value="newspaper"
+                  />
+                  <label for="source-newspaper"
+                    >Newspaper / Advertisement</label
+                  >
+                </div>
+                <div class="radio-group">
+                  <input
+                    type="radio"
+                    id="source-other"
+                    name="source"
+                    value="other"
+                  />
+                  <label for="source-other">Other</label>
+                </div>
+              </fieldset>
+
+              <!-- Consent Checkbox -->
+              <div class="form-group">
+                <input type="checkbox" id="consent" name="consent" required />
+                <label for="consent">
+                  I agree that Himalaya College may contact me regarding my
+                  inquiry via email or phone.
+                  <span aria-label="required">*</span>
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="form-group">
+                <button type="submit">Send Message</button>
+                <button type="reset">Clear Form</button>
+              </div>
+            </form>
+          </div>
+          <!-- end #contact-form-wrapper -->
+        </div>
+        <!-- end #contact-layout -->
+      </section>
+      <!-- CONTACT SECTION END -->
+
+      <!-- ============================================================
+         PARTNERS / AFFILIATIONS SECTION START
+         Contains: University affiliations and industry partners
+    ============================================================ -->
+      <section id="partners" aria-labelledby="partners-heading">
+        <header>
+          <h2 id="partners-heading">Affiliations &amp; Partners</h2>
+          <p>Building bridges between academia and industry</p>
+        </header>
+
+        <div id="university-affiliations">
+          <h3>University Affiliations</h3>
+          <ul>
+            <li>
+              <img
+                src="https://placehold.co/150x80?text=TU+Logo"
+                alt="Tribhuvan University logo"
+                width="150"
+                height="80"
+              />
+              <span>Tribhuvan University</span>
+            </li>
+            <li>
+              <img
+                src="https://placehold.co/150x80?text=UGC+Logo"
+                alt="University Grants Commission Nepal logo"
+                width="150"
+                height="80"
+              />
+              <span>UGC Nepal</span>
+            </li>
+            <li>
+              <img
+                src="https://placehold.co/150x80?text=NAAC"
+                alt="National Accreditation and Quality Assurance Council logo"
+                width="150"
+                height="80"
+              />
+              <span>NAAC Accredited</span>
+            </li>
+          </ul>
+        </div>
+
+        <div id="industry-partners">
+          <h3>Industry &amp; Placement Partners</h3>
+          <ul>
+            <li>
+              <img
+                src="https://placehold.co/150x80?text=Infosys+BPO"
+                alt="Infosys BPO Nepal logo"
+                width="150"
+                height="80"
+              />
+            </li>
+            <li>
+              <img
+                src="https://placehold.co/150x80?text=Locus+Tech"
+                alt="Locus Technology logo"
+                width="150"
+                height="80"
+              />
+            </li>
+            <li>
+              <img
+                src="https://placehold.co/150x80?text=Nabil+Bank"
+                alt="Nabil Bank logo"
+                width="150"
+                height="80"
+              />
+            </li>
+            <li>
+              <img
+                src="https://placehold.co/150x80?text=CloudFactory"
+                alt="CloudFactory Nepal logo"
+                width="150"
+                height="80"
+              />
+            </li>
+            <li>
+              <img
+                src="https://placehold.co/150x80?text=Leapfrog"
+                alt="Leapfrog Technology logo"
+                width="150"
+                height="80"
+              />
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- PARTNERS SECTION END -->
+    </main>
+    <!-- MAIN CONTENT AREA END -->
+
+    <!-- ============================================================
+       FOOTER SECTION START
+       Contains: About, Quick Links, Programs, Social Media, Copyright
+  ============================================================ -->
+    <footer id="site-footer">
+      <!-- Footer Main Content -->
+      <div id="footer-content">
+        <!-- Footer Column 1: About the College -->
+        <div class="footer-col" id="footer-about">
+          <img
+            src="https://placehold.co/70x70?text=HCTM"
+            alt="Himalaya College logo"
+            width="70"
+            height="70"
+          />
+          <h3>Himalaya College of Technology &amp; Management</h3>
+          <p>
+            Providing quality higher education in Nepal since 2001. Affiliated
+            to Tribhuvan University and approved by UGC Nepal.
+          </p>
+          <address>
+            Gwarko, Lalitpur – 3<br />
+            Bagmati Province, Nepal<br />
+            <a href="tel:+97715553000">+977-1-555-3000</a><br />
+            <a href="mailto:info@himalayacollege.edu.np"
+              >info@himalayacollege.edu.np</a
+            >
+          </address>
+        </div>
+        <!-- end #footer-about -->
+
+        <!-- Footer Column 2: Quick Links -->
+        <nav
+          class="footer-col"
+          id="footer-quick-links"
+          aria-label="Quick Links"
+        >
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#programs">Academic Programs</a></li>
+            <li><a href="#admissions">Admissions</a></li>
+            <li><a href="#facilities">Facilities</a></li>
+            <li><a href="#news">News &amp; Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#">Student Portal</a></li>
+            <li><a href="#">Faculty Login</a></li>
+            <li><a href="#">TU Exam Results</a></li>
+            <li><a href="#">Download Forms</a></li>
+          </ul>
+        </nav>
+        <!-- end #footer-quick-links -->
+
+        <!-- Footer Column 3: Programs -->
+        <nav class="footer-col" id="footer-programs" aria-label="Programs">
+          <h3>Our Programs</h3>
+          <ul>
+            <li><a href="#program-bca">BCA – Computer Applications</a></li>
+            <li><a href="#program-bbs">BBS – Business Studies</a></li>
+            <li><a href="#program-bim">BIM – Information Management</a></li>
+            <li><a href="#program-bit">BIT – Information Technology</a></li>
+            <li><a href="#program-bsc">BSc CSIT</a></li>
+            <li><a href="#program-mba">MBA – Business Administration</a></li>
+          </ul>
+
+          <h3>Important Links</h3>
+          <ul>
+            <li>
+              <a
+                href="https://tribhuvan-university.edu.np"
+                target="_blank"
+                rel="noopener"
+                >Tribhuvan University</a
+              >
+            </li>
+            <li>
+              <a href="https://ugcnepal.edu.np" target="_blank" rel="noopener"
+                >UGC Nepal</a
+              >
+            </li>
+            <li>
+              <a href="https://neb.gov.np" target="_blank" rel="noopener"
+                >NEB (Grade 12 Board)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://scholarships.gov.np"
+                target="_blank"
+                rel="noopener"
+                >Government Scholarships</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <!-- end #footer-programs -->
+
+        <!-- Footer Column 4: Social Media & Newsletter -->
+        <div class="footer-col" id="footer-social">
+          <h3>Follow Us</h3>
+          <ul id="social-links">
+            <li>
+              <a
+                href="#"
+                aria-label="Follow Himalaya College on Facebook"
+                rel="noopener"
+              >
+                Facebook — @HimalayaCollegeNP
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                aria-label="Follow Himalaya College on Instagram"
+                rel="noopener"
+              >
+                Instagram — @himalaya_college
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                aria-label="Follow Himalaya College on YouTube"
+                rel="noopener"
+              >
+                YouTube — Himalaya College Nepal
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                aria-label="Follow Himalaya College on LinkedIn"
+                rel="noopener"
+              >
+                LinkedIn — Himalaya College
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                aria-label="Contact Himalaya College on WhatsApp"
+                rel="noopener"
+              >
+                WhatsApp — +977 980-1234567
+              </a>
+            </li>
+          </ul>
+
+          <!-- Newsletter Signup -->
+          <div id="newsletter">
+            <h3>Newsletter</h3>
+            <p>
+              Get updates on admissions, events, and notices directly in your
+              inbox.
+            </p>
+            <form
+              action="/subscribe"
+              method="POST"
+              aria-label="Newsletter subscription form"
+            >
+              <label for="newsletter-email">Email Address</label>
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                placeholder="your@email.com"
+                required
+              />
+              <button type="submit">Subscribe</button>
             </form>
           </div>
         </div>
+        <!-- end #footer-social -->
       </div>
-    </section>
+      <!-- end #footer-content -->
 
-    <!-- ==================== EXPANDED FOOTER - Real College of Nepal references, rich links ==================== -->
-    <footer class="footer">
-      <div class="container footer-grid">
-        <div class="footer-col">
-          <img
-            src="https://placehold.co/120x60?text=XYZ+College+Logo"
-            alt="XYZ College footer logo"
-          />
+      <!-- Footer Bottom Bar -->
+      <div id="footer-bottom">
+        <div id="footer-legal">
           <p>
-            XYZ College is a premier higher education institution in Nepal,
-            recognized by UGC, affiliated with Tribhuvan University & Purbanchal
-            University. We nurture future innovators & entrepreneurs.
+            &copy; 2024 Himalaya College of Technology &amp; Management. All
+            Rights Reserved.
+          </p>
+          <p>
+            Registered under Company Registrar Office, Nepal &bull; PAN:
+            123456789 &bull; Reg. No: 098765/2058
           </p>
         </div>
-        <div class="footer-col">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#programs">Academic Calendar</a></li>
-            <li><a href="#admissions">Scholarships</a></li>
-            <li><a href="#">Exam Results</a></li>
-            <li><a href="#">Library Portal</a></li>
-            <li><a href="#">Career at XYZ</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h3>Popular Programs</h3>
-          <ul>
-            <li><a href="#">BCA (Bachelor in CS)</a></li>
-            <li><a href="#">BIM (Information Mgmt)</a></li>
-            <li><a href="#">BBS (Business Studies)</a></li>
-            <li><a href="#">BSc CSIT</a></li>
-            <li><a href="#">MBA / MCA</a></li>
-            <li><a href="#">+2 Science/Management</a></li>
-          </ul>
-        </div>
 
-        <div class="footer-col">
-          <h3>Connect with XYZ</h3>
-          <p>📱 Social Media: Facebook | Instagram | LinkedIn | YouTube</p>
-          <p>📢 Helpline: +977-9801122334</p>
-          <p>✉️ feedback@xyzcollege.edu.np</p>
-          <img
-            src="https://placehold.co/150x50?text=Download+App"
-            alt="Mobile app coming soon"
-          />
+        <nav id="footer-legal-links" aria-label="Legal links">
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">Sitemap</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </nav>
+
+        <div id="footer-credit">
+          <p>
+            Affiliated to
+            <a
+              href="https://tribhuvan-university.edu.np"
+              target="_blank"
+              rel="noopener"
+              >Tribhuvan University</a
+            >
+            | Approved by
+            <a href="https://ugcnepal.edu.np" target="_blank" rel="noopener"
+              >UGC Nepal</a
+            >
+          </p>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>
-          © 2026 XYZ College, Nepal. All rights reserved. | Designed for
-          excellence | Accredited by UGC Nepal
-        </p>
-      </div>
+      <!-- end #footer-bottom -->
     </footer>
+    <!-- FOOTER SECTION END -->
   </body>
 </html>
