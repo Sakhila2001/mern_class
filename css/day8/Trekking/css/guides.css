@@ -1,0 +1,368 @@
+.guides-hero {
+  position: relative;
+  min-height: 70svh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2318 0%, #1a3a2a 100%);
+  margin-top: var(--header-h);
+  padding-block: var(--space-xl);
+}
+.guides-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/guides-hero-bg.jpg");
+  background-size: cover;
+  background-position: 30% 50%;
+  opacity: 0.4;
+}
+.guides-hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 720px;
+}
+.guides-hero h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  margin-bottom: var(--space-md);
+}
+.guides-hero h1 span {
+  color: var(--col-sage);
+}
+.guides-hero p {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-lg);
+  opacity: 0.9;
+}
+
+/* ----------------------------------------------------------------
+   BENEFITS GRID
+---------------------------------------------------------------- */
+.guide-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+.benefit-card {
+  background: #fff;
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: var(--transition);
+}
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+.benefit-card h3 {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--col-summit);
+}
+.benefit-card p {
+  font-size: 0.9rem;
+  color: var(--col-stone);
+}
+
+/* ----------------------------------------------------------------
+   GUIDE PROFILES (cards)
+---------------------------------------------------------------- */
+.guide-profiles {
+  background: var(--col-earth-lt);
+}
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-lg);
+}
+.guide-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.guide-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.guide-photo {
+  height: 380px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../images/pemba-sherpa.jpg");
+  background-color: #4a5b4e;
+}
+.guide-photo-2 {
+  background-image: url("../images/tashi-sherpa.jpg");
+  background-color: #6b5e4a;
+}
+.guide-photo-3 {
+  background-image: url("../images/mr-pasang-tenjing.jpg");
+  background-color: #3a5a3a;
+}
+.guide-photo-4 {
+  background-image: url("../images/guide-pasang.jpg");
+  background-color: #8b6b4b;
+}
+.guide-info {
+  padding: var(--space-lg);
+}
+.guide-info h3 {
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  color: var(--col-summit);
+  margin-bottom: 0.25rem;
+}
+.guide-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--col-pine);
+  letter-spacing: 0.03em;
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+}
+.guide-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: var(--space-md);
+}
+.guide-badges span {
+  background: rgba(82, 183, 136, 0.15);
+  padding: 0.2rem 0.8rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--col-pine);
+}
+.guide-info p {
+  font-size: 0.9rem;
+  color: var(--col-rock);
+  margin-bottom: var(--space-md);
+  line-height: 1.65;
+}
+.guide-social {
+  display: flex;
+  gap: var(--space-sm);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: var(--space-sm);
+}
+.guide-social a {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--col-pine);
+  text-decoration: none;
+}
+.guide-social a:hover {
+  color: var(--col-earth);
+}
+
+/* ----------------------------------------------------------------
+   TRAINING SECTION
+---------------------------------------------------------------- */
+.training-section {
+  background: #fff;
+}
+.training-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+.training-text ul {
+  margin: var(--space-md) 0;
+  list-style: none;
+}
+.training-text li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+.training-text li::before {
+  content: "✓";
+  color: var(--col-pine);
+  position: absolute;
+  left: 0;
+  font-weight: 800;
+}
+.training-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+}
+.cert-badge {
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  min-width: 130px;
+}
+.cert-badge img {
+  width: 48px;
+  margin-bottom: 0.5rem;
+}
+.cert-badge span {
+  display: block;
+  font-weight: 700;
+  color: var(--col-summit);
+  font-size: 0.8rem;
+}
+
+/* ----------------------------------------------------------------
+   GUIDE TESTIMONIALS
+---------------------------------------------------------------- */
+.guide-testimonials {
+  background: var(--col-summit);
+  color: #fff;
+}
+.guide-testimonials .section-tag {
+  background: rgba(82, 183, 136, 0.2);
+  color: var(--col-sage);
+}
+.guide-testimonials .section-title {
+  color: #fff;
+}
+.testimonial-slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+.testi-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.testi-card p {
+  font-style: italic;
+  margin-bottom: var(--space-md);
+  font-size: 0.95rem;
+}
+.testi-card footer {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--space-sm);
+}
+
+/* ----------------------------------------------------------------
+   GUIDE REQUEST FORM
+---------------------------------------------------------------- */
+.request-section {
+  background: #fff;
+}
+.request-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+.request-text h2 {
+  font-family: var(--ff-display);
+  font-size: 1.8rem;
+  color: var(--col-summit);
+  margin-bottom: var(--space-sm);
+}
+.perk-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+.perk-list span {
+  background: rgba(45, 106, 79, 0.1);
+  padding: 0.3rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--col-pine);
+}
+.guide-request-form {
+  background: var(--col-earth-lt);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: var(--space-sm);
+}
+.form-group label {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--col-rock);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  font-family: inherit;
+}
+.form-note {
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: var(--space-sm);
+  color: var(--col-stone);
+}
+.btn-full {
+  margin-top: var(--space-sm);
+}
+
+/* ----------------------------------------------------------------
+   RESPONSIVE
+---------------------------------------------------------------- */
+@media (max-width: 800px) {
+  .training-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  .request-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .profiles-grid {
+    grid-template-columns: 1fr;
+  }
+  .guides-hero h1 {
+    font-size: 2rem;
+  }
+  .guides-hero p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .guide-badges {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .testimonial-slider {
+    grid-template-columns: 1fr;
+  }
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+  }
+}

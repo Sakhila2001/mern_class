@@ -1,0 +1,2042 @@
+/* ================================================================
+   SUMMIT NEPAL – TREKKING WEBSITE
+   Phase 2: CSS Only (nature-inspired, fully responsive)
+   Aesthetic: Editorial mountain journal meets modern adventure brand
+   Fonts: Playfair Display (display) + Nunito Sans (body)
+================================================================ */
+
+/* ----------------------------------------------------------------
+   0. GOOGLE FONTS IMPORT
+---------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600;1,700&family=Nunito+Sans:wght@300;400;600;700;800&display=swap");
+
+/* ----------------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES
+---------------------------------------------------------------- */
+:root {
+  /* Colors — earthy Himalayan palette */
+  --col-summit: #1a3a2a; /* deep forest green — primary dark */
+  --col-pine: #2d6a4f; /* mid forest green */
+  --col-sage: #52b788; /* bright sage */
+  --col-mist: #b7e4c7; /* pale mint */
+  --col-sky: #4a90b8; /* Himalayan sky blue */
+  --col-sky-lt: #d0e8f5; /* pale sky */
+  --col-earth: #c2905a; /* warm terracotta / amber accent */
+  --col-earth-lt: #f5e6d3; /* warm cream */
+  --col-snow: #f8f9f6; /* off-white */
+  --col-stone: #6b7280; /* neutral gray */
+  --col-rock: #374151; /* dark gray text */
+  --col-night: #0f1f17; /* near black */
+
+  /* Typography */
+  --ff-display: "Playfair Display", Georgia, serif;
+  --ff-body: "Nunito Sans", -apple-system, sans-serif;
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 7rem;
+
+  /* Borders */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 100px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.18);
+
+  /* Transitions */
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout */
+  --max-width: 1200px;
+  --header-h: 72px;
+}
+
+/* ----------------------------------------------------------------
+   2. RESET & BASE
+---------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--col-rock);
+  background: var(--col-snow);
+  overflow-x: hidden;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+address {
+  font-style: normal;
+}
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+blockquote {
+  margin: 0;
+}
+
+/* ----------------------------------------------------------------
+   3. UTILITIES
+---------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+/* Sections */
+.section {
+  padding-block: var(--space-2xl);
+}
+.section-alt {
+  background: var(--col-earth-lt);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin-inline: auto;
+  margin-bottom: var(--space-xl);
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--ff-body);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--col-earth);
+  background: var(--col-earth-lt);
+  border: 1px solid rgba(194, 144, 90, 0.3);
+  padding: 0.3em 1em;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-sm);
+}
+
+.section-alt .section-tag {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.section-title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  color: var(--col-summit);
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--col-stone);
+  line-height: 1.75;
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+/* ----------------------------------------------------------------
+   4. BUTTONS
+---------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--ff-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.85em 2em;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: var(--col-pine);
+  color: #fff;
+  border-color: var(--col-pine);
+}
+.btn-primary:hover {
+  background: var(--col-summit);
+  border-color: var(--col-summit);
+}
+
+.btn-accent {
+  background: var(--col-earth);
+  color: #fff;
+  border-color: var(--col-earth);
+}
+.btn-accent:hover {
+  background: #a8774a;
+  border-color: #a8774a;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--col-pine);
+  border-color: var(--col-pine);
+}
+.btn-outline:hover {
+  background: var(--col-pine);
+  color: #fff;
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+.btn-outline-light:hover {
+  background: #fff;
+  color: var(--col-summit);
+}
+
+.btn-sm {
+  font-size: 0.82rem;
+  padding: 0.6em 1.4em;
+}
+.btn-full {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ----------------------------------------------------------------
+   5. HEADER / NAV
+---------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--header-h);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(45, 106, 79, 0.1);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+  transition:
+    background var(--transition),
+    box-shadow var(--transition);
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--col-summit);
+}
+
+.logo-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+
+.logo-text {
+  font-family: var(--ff-display);
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+.logo-text strong {
+  font-weight: 900;
+  color: var(--col-pine);
+}
+
+/* Main Nav */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.nav-list a {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--col-rock);
+  padding: 0.4em 0.7em;
+  border-radius: var(--radius-sm);
+  transition:
+    color var(--transition),
+    background var(--transition);
+  white-space: nowrap;
+}
+
+.nav-list a:hover {
+  color: var(--col-pine);
+  background: rgba(45, 106, 79, 0.07);
+}
+
+/* Nav CTA */
+.nav-cta {
+  flex-shrink: 0;
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  padding: 0;
+  z-index: 1100;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--col-summit);
+  border-radius: 2px;
+  transition:
+    transform var(--transition),
+    opacity var(--transition);
+}
+/* Dropdown */
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--col-rock);
+  padding: 0.4em 0.7em;
+  border-radius: var(--radius-sm);
+  background: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 0.5rem 0;
+  min-width: 200px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.6em 1.2em;
+  font-size: 0.85rem;
+  color: var(--col-rock);
+}
+
+.dropdown li a:hover {
+  background: rgba(45, 106, 79, 0.08);
+  color: var(--col-pine);
+}
+
+/* Desktop hover */
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+/* Desktop arrow */
+.dropdown-toggle::after {
+  content: "▾";
+  margin-left: 0.4em;
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+/* ----------------------------------------------------------------
+   6. HERO SECTION
+---------------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: var(--header-h);
+  background: var(--col-night);
+}
+
+/* Background image — Himalayan gradient stand-in */
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    165deg,
+    #0f2318 0%,
+    #1a4a30 30%,
+    #2d6a4f 55%,
+    #4a90b8 80%,
+    #89c4e1 100%
+  );
+  background-size: cover;
+  background-position: center;
+}
+
+/* Layered atmospheric effects */
+.hero-bg-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 60% 80%,
+      rgba(74, 144, 184, 0.25) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 20% 30%,
+      rgba(82, 183, 136, 0.12) 0%,
+      transparent 60%
+    );
+}
+
+/* Mountain silhouette shapes */
+.hero-bg-img::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background:
+    /* Front range */ linear-gradient(
+    to top,
+    #0f1f17 0%,
+    transparent 100%
+  );
+  clip-path: polygon(
+    0% 100%,
+    0% 75%,
+    5% 60%,
+    10% 70%,
+    18% 40%,
+    25% 55%,
+    30% 30%,
+    37% 50%,
+    42% 20%,
+    50% 38%,
+    55% 15%,
+    62% 35%,
+    70% 18%,
+    78% 45%,
+    83% 28%,
+    88% 50%,
+    93% 38%,
+    100% 55%,
+    100% 100%
+  );
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 28, 18, 0.35) 0%,
+    rgba(10, 28, 18, 0.55) 50%,
+    rgba(10, 28, 18, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 760px;
+  padding-block: var(--space-xl);
+}
+
+.hero-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--col-sage);
+  margin-bottom: var(--space-sm);
+  opacity: 0;
+  animation: fadeUp 0.7s 0.2s forwards;
+}
+
+.hero-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  line-height: 1.08;
+  font-weight: 900;
+  margin-bottom: var(--space-md);
+  opacity: 0;
+  animation: fadeUp 0.8s 0.35s forwards;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--col-sage);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  color: white;
+  max-width: 540px;
+  margin-bottom: var(--space-lg);
+  opacity: 0;
+  animation: fadeUp 0.8s 0.5s forwards;
+}
+
+/* Hero Search */
+.hero-search {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-pill);
+  padding: 0.4rem 0.4rem 0.4rem 1.5rem;
+  backdrop-filter: blur(8px);
+  max-width: 520px;
+  margin-bottom: var(--space-lg);
+  opacity: 0;
+  animation: fadeUp 0.8s 0.65s forwards;
+}
+
+.hero-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 0.95rem;
+}
+.hero-search input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Hero Actions */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  opacity: 0;
+  animation: fadeUp 0.8s 0.8s forwards;
+}
+
+/* Hero Stats */
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg) var(--space-xl);
+  opacity: 0;
+  animation: fadeUp 0.8s 0.95s forwards;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+.stat strong {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--col-sage);
+  line-height: 1;
+}
+.stat span {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 0.2em;
+}
+
+/* Scroll cue */
+.hero-scroll-cue {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4em;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: bounceY 2s 2s infinite;
+}
+
+.scroll-arrow {
+  font-size: 1.4rem;
+}
+
+/* ----------------------------------------------------------------
+   7. ABOUT / REGIONS
+---------------------------------------------------------------- */
+.about-regions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+
+.region-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.region-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Region image placeholders with atmospheric gradients */
+.region-img {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+.everest-img {
+  background: linear-gradient(
+    160deg,
+    #0f2318 0%,
+    #2d6a4f 40%,
+    #89c4e1 70%,
+    #c9e8f5 100%
+  );
+}
+.annapurna-img {
+  background: linear-gradient(
+    160deg,
+    #1a3a2a 0%,
+    #52b788 45%,
+    #d0e8f5 80%,
+    #e8f5e0 100%
+  );
+}
+.langtang-img {
+  background: linear-gradient(
+    160deg,
+    #0d1f10 0%,
+    #3d7a52 35%,
+    #74b98a 70%,
+    #b7e4c7 100%
+  );
+}
+.mustang-img {
+  background: linear-gradient(
+    160deg,
+    #4a2510 0%,
+    #8b5e3c 40%,
+    #c2905a 65%,
+    #e8d5b7 100%
+  );
+}
+
+.region-body {
+  padding: var(--space-md);
+}
+.region-body h3 {
+  font-family: var(--ff-display);
+  font-size: 1.25rem;
+  color: var(--col-summit);
+  margin-bottom: 0.5em;
+}
+.region-body p {
+  font-size: 0.9rem;
+  color: var(--col-stone);
+  line-height: 1.65;
+  margin-bottom: var(--space-sm);
+}
+
+.link-arrow {
+  font-weight: 700;
+  font-size: 0.87rem;
+  color: var(--col-pine);
+  transition:
+    gap var(--transition),
+    color var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+.link-arrow:hover {
+  color: var(--col-earth);
+  gap: 0.6em;
+}
+
+/* ----------------------------------------------------------------
+   8. PACKAGES GRID
+---------------------------------------------------------------- */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+.package-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.package-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Package image areas */
+.package-img {
+  height: 220px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.ebc-img {
+  background: linear-gradient(
+    145deg,
+    #0a1a10 0%,
+    #1a4a30 35%,
+    #4a90b8 70%,
+    #a8d8f0 100%
+  );
+}
+.annapurna-circuit-img {
+  background: linear-gradient(
+    145deg,
+    #0d2018 0%,
+    #2d7a50 40%,
+    #52b788 70%,
+    #d0e8f5 100%
+  );
+}
+.langtang-trek-img {
+  background: linear-gradient(
+    145deg,
+    #0f2218 0%,
+    #3a6040 40%,
+    #7ab894 70%,
+    #c0e0cc 100%
+  );
+}
+.manaslu-img {
+  background: linear-gradient(
+    145deg,
+    #1a0a00 0%,
+    #5c3820 40%,
+    #8b5e3c 65%,
+    #d4a574 100%
+  );
+}
+
+/* Badge */
+.package-badge {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  background: var(--col-earth);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3em 0.8em;
+  border-radius: var(--radius-pill);
+}
+.badge-green {
+  background: var(--col-pine);
+}
+.badge-orange {
+  background: #d97706;
+}
+
+.package-body {
+  padding: var(--space-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.package-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: 0.75em;
+}
+
+/* Difficulty pills */
+.difficulty {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25em 0.75em;
+  border-radius: var(--radius-pill);
+}
+.difficulty-easy {
+  background: rgba(82, 183, 136, 0.15);
+  color: var(--col-pine);
+}
+.difficulty-moderate {
+  background: rgba(74, 144, 184, 0.15);
+  color: var(--col-sky);
+}
+.difficulty-hard {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+}
+
+.duration {
+  font-size: 0.82rem;
+  color: var(--col-stone);
+  font-weight: 600;
+}
+
+.package-title {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  color: var(--col-summit);
+  margin-bottom: 0.5em;
+}
+
+.package-desc {
+  font-size: 0.88rem;
+  color: var(--col-stone);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: var(--space-md);
+}
+
+.package-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-sm);
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.package-price {
+  display: flex;
+  flex-direction: column;
+}
+.price-from {
+  font-size: 0.72rem;
+  color: var(--col-stone);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.package-price strong {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--col-summit);
+  line-height: 1.1;
+}
+.price-pp {
+  font-size: 0.72rem;
+  color: var(--col-stone);
+}
+
+/* ----------------------------------------------------------------
+   9. DESTINATIONS GRID
+---------------------------------------------------------------- */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 260px 260px;
+  gap: var(--space-sm);
+}
+
+.dest-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.dest-large {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+.dest-wide {
+  grid-column: 2 / 4;
+}
+
+.dest-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s var(--transition);
+}
+.dest-card:hover .dest-img {
+  transform: scale(1.08);
+}
+
+/* Destination imagery */
+.dest-everest {
+  background: linear-gradient(
+    160deg,
+    #0a1a10 0%,
+    #1a4a30 40%,
+    #4a90b8 70%,
+    #a8d8f0 100%
+  );
+}
+.dest-annapurna {
+  background: linear-gradient(160deg, #0f2018 0%, #2d7a50 45%, #b7e4c7 100%);
+}
+.dest-langtang {
+  background: linear-gradient(160deg, #0d1a0f 0%, #3a6540 45%, #c0e8cc 100%);
+}
+.dest-mustang {
+  background: linear-gradient(160deg, #3a1800 0%, #8b4a20 45%, #e8c090 100%);
+}
+.dest-dolpo {
+  background: linear-gradient(
+    160deg,
+    #0a1520 0%,
+    #1a3a5a 40%,
+    #4a7ab8 70%,
+    #9cc5e8 100%
+  );
+}
+
+.dest-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 20, 14, 0.88) 0%,
+    rgba(10, 20, 14, 0.3) 55%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-md);
+  transition: background var(--transition);
+}
+.dest-card:hover .dest-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(10, 20, 14, 0.92) 0%,
+    rgba(10, 20, 14, 0.5) 60%,
+    rgba(10, 20, 14, 0.15) 100%
+  );
+}
+
+.dest-overlay h3 {
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.25em;
+}
+.dest-large .dest-overlay h3 {
+  font-size: 1.8rem;
+}
+
+.dest-overlay p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: var(--space-sm);
+}
+
+/* ----------------------------------------------------------------
+   10. WHY CHOOSE US
+---------------------------------------------------------------- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--col-sage);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--col-earth);
+}
+
+.feature-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.75em;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.feature-card h3 {
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  color: var(--col-summit);
+  margin-bottom: 0.5em;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--col-stone);
+  line-height: 1.65;
+}
+
+/* ----------------------------------------------------------------
+   11. TESTIMONIALS
+---------------------------------------------------------------- */
+.testimonials {
+  background: var(--col-summit);
+}
+.testimonials .section-tag {
+  background: rgba(82, 183, 136, 0.2);
+  color: var(--col-sage);
+  border-color: rgba(82, 183, 136, 0.3);
+}
+.testimonials .section-title {
+  color: #fff;
+}
+.testimonials .section-desc {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  transition:
+    background var(--transition),
+    transform var(--transition);
+}
+.testimonial-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+}
+
+.featured-testimonial {
+  grid-column: 1 / -1;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-lg);
+  align-items: center;
+  background: rgba(82, 183, 136, 0.12);
+  border-color: rgba(82, 183, 136, 0.25);
+}
+
+@media (max-width: 700px) {
+  .featured-testimonial {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stars {
+  font-size: 1rem;
+  color: #fbbf24;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75em;
+}
+
+.testimonial-card p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.75;
+  font-style: italic;
+  margin-bottom: var(--space-md);
+}
+
+.testimonial-card footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--col-pine);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+
+.reviewer-info {
+  display: flex;
+  flex-direction: column;
+}
+.reviewer-info cite {
+  color: #fff;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+.reviewer-info span {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+}
+
+/* Trust badges */
+.trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+  padding-top: var(--space-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3em;
+}
+.trust-badge span {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.trust-badge small {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ----------------------------------------------------------------
+   12. BLOG
+---------------------------------------------------------------- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.blog-featured {
+  grid-column: 1 / -1;
+  flex-direction: row;
+}
+
+.blog-img {
+  flex-shrink: 0;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+.blog-featured .blog-img {
+  width: 44%;
+  height: auto;
+  min-height: 260px;
+}
+
+/* Blog image gradients */
+.blog-img-season {
+  background: linear-gradient(
+    135deg,
+    #0f2a18 0%,
+    #2d6a4f 45%,
+    #4a90b8 80%,
+    #a8d8f0 100%
+  );
+}
+.blog-img-packing {
+  background: linear-gradient(
+    135deg,
+    #1a2a10 0%,
+    #4a6a30 45%,
+    #8aaa60 80%,
+    #c0d8a0 100%
+  );
+}
+.blog-img-tips {
+  background: linear-gradient(
+    135deg,
+    #0a1520 0%,
+    #2a4060 45%,
+    #4a80a8 80%,
+    #90c0d8 100%
+  );
+}
+.blog-img-permits {
+  background: linear-gradient(
+    135deg,
+    #3a1800 0%,
+    #7a4020 45%,
+    #b87850 80%,
+    #e0b890 100%
+  );
+}
+
+.blog-body {
+  padding: var(--space-md) var(--space-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: 0.75em;
+}
+
+.blog-category {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--col-pine);
+  background: rgba(45, 106, 79, 0.1);
+  padding: 0.2em 0.75em;
+  border-radius: var(--radius-pill);
+}
+
+.blog-meta time {
+  font-size: 0.8rem;
+  color: var(--col-stone);
+}
+
+.blog-card h3 {
+  font-family: var(--ff-display);
+  font-size: 1.15rem;
+  color: var(--col-summit);
+  line-height: 1.3;
+  margin-bottom: 0.5em;
+}
+.blog-featured h3 {
+  font-size: 1.4rem;
+}
+
+.blog-card h3 a {
+  transition: color var(--transition);
+}
+.blog-card h3 a:hover {
+  color: var(--col-pine);
+}
+
+.blog-card p {
+  font-size: 0.9rem;
+  color: var(--col-stone);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: var(--space-sm);
+}
+
+/* ----------------------------------------------------------------
+   13. CONTACT
+---------------------------------------------------------------- */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.contact-info h3 {
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  color: var(--col-summit);
+  margin-bottom: var(--space-lg);
+}
+
+.contact-item {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  align-items: flex-start;
+}
+
+.contact-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 0.1em;
+}
+.contact-item strong {
+  display: block;
+  font-weight: 700;
+  color: var(--col-rock);
+  margin-bottom: 0.2em;
+}
+.contact-item p {
+  font-size: 0.9rem;
+  color: var(--col-stone);
+}
+.contact-item a {
+  color: var(--col-pine);
+}
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.contact-social {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.contact-social h4 {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--col-stone);
+  margin-bottom: var(--space-sm);
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.social-links a {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--col-pine);
+  background: rgba(45, 106, 79, 0.1);
+  border: 1px solid rgba(45, 106, 79, 0.2);
+  padding: 0.35em 0.9em;
+  border-radius: var(--radius-pill);
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+.social-links a:hover {
+  background: var(--col-pine);
+  color: #fff;
+}
+
+/* Contact Form */
+.contact-form-wrapper {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  margin-bottom: var(--space-sm);
+}
+
+.form-group label {
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: var(--col-rock);
+  letter-spacing: 0.02em;
+}
+.form-group label span {
+  color: var(--col-earth);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75em 1em;
+  border: 1.5px solid rgba(0, 0, 0, 0.13);
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  color: var(--col-rock);
+  background: var(--col-snow);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--col-pine);
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.12);
+  background: #fff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--col-stone);
+  margin-top: var(--space-sm);
+}
+
+/* ----------------------------------------------------------------
+   14. FOOTER
+---------------------------------------------------------------- */
+.site-footer {
+  background: var(--col-night);
+  color: rgba(255, 255, 255, 0.75);
+  padding-top: var(--space-2xl);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  gap: var(--space-2xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-brand .logo-light {
+  color: #fff;
+}
+.footer-brand .logo-light .logo-text strong {
+  color: var(--col-sage);
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  max-width: 320px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: grid;
+  place-items: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+.social-icon:hover {
+  background: var(--col-pine);
+  color: #fff;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.footer-col h4 {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: var(--space-sm);
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45em;
+}
+.footer-col a {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color var(--transition);
+}
+.footer-col a:hover {
+  color: var(--col-sage);
+}
+
+.footer-bottom {
+  padding-block: var(--space-md);
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.footer-certifications {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+.footer-certifications span {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ----------------------------------------------------------------
+   15. KEYFRAME ANIMATIONS
+---------------------------------------------------------------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceY {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+/* ----------------------------------------------------------------
+   16. RESPONSIVE — TABLET (≤ 900px)
+---------------------------------------------------------------- */
+@media (max-width: 900px) {
+  :root {
+    --space-2xl: 4.5rem;
+  }
+
+  /* Nav */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+
+    background: rgba(15, 31, 23, 0.98);
+    backdrop-filter: blur(16px);
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    padding: 5rem 1.5rem 2rem;
+
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+
+    overflow-y: auto;
+  }
+
+  .main-nav.open {
+    transform: translateX(0);
+  }
+
+  .nav-list {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .nav-list a,
+  .dropdown-toggle {
+    display: block;
+    font-size: 1.05rem;
+    font-family: var(--ff-body);
+
+    padding: 0.75em 0.5em;
+
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-sm);
+  }
+
+  .nav-list a:hover,
+  .dropdown-toggle:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--col-sage);
+  }
+
+  /* DROPDOWN FIX */
+  .has-dropdown {
+    width: 100%;
+  }
+
+  .dropdown {
+    width: 100%;
+    margin-left: 0.5rem;
+    margin-top: 0.2rem;
+
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-left: 0.6rem;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .has-dropdown.open .dropdown {
+    max-height: 400px;
+  }
+
+  .dropdown li a {
+    font-size: 0.95rem;
+    padding: 0.55em 0.4em;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .nav-cta {
+    margin-top: auto;
+    width: 100%;
+  }
+  .dropdown {
+    position: static; /* no longer floats */
+    background: transparent; /* inherits dark sidebar bg */
+    border-radius: 0; /* no floating card look */
+    box-shadow: none; /* no shadow inside sidebar */
+    padding: 0;
+
+    width: 100%;
+    margin-left: 0.75rem;
+    margin-top: 0;
+
+    border-left: 2px solid rgba(255, 255, 255, 0.15);
+    padding-left: 0.75rem;
+
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1; /* override desktop fade */
+    visibility: visible; /* override desktop hidden */
+    transform: none; /* override desktop translateY */
+    transition: max-height 0.3s ease;
+  }
+
+  .has-dropdown.open .dropdown {
+    max-height: 400px;
+  }
+
+  .dropdown li a {
+    font-size: 0.92rem;
+    padding: 0.55em 0.5em;
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--radius-sm);
+  }
+
+  .dropdown li a:hover {
+    color: var(--col-sage);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  /* Arrow rotation indicator */
+  .dropdown-toggle::after {
+    content: " ▾";
+    display: inline-block;
+    transition: transform 0.25s ease;
+    transform-origin: center;
+  }
+
+  /* Hide the ▾ baked into the HTML button text */
+  /* (or strip it from HTML and rely solely on ::after) */
+
+  .has-dropdown.open .dropdown-toggle::after {
+    transform: rotate(-180deg);
+  }
+  .nav-cta.btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  /* Destinations */
+  .destinations-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .dest-large {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    height: 300px;
+  }
+  .dest-wide {
+    grid-column: 1 / -1;
+  }
+
+  /* Testimonials */
+  .testimonials-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .featured-testimonial {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+  }
+
+  /* Blog */
+  .blog-featured {
+    flex-direction: column;
+  }
+  .blog-featured .blog-img {
+    width: 100%;
+    height: 220px;
+  }
+
+  /* Contact */
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* images */
+/* base style */
+.region-img,
+.package-img,
+.blog-img,
+.sub-img,
+.dest-img1 {
+  width: 100%;
+  height: 220px;
+  border-radius: var(--radius-md);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.dest-img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-md);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.everest-img {
+  background-image: url("../images/Everest Region.jpeg");
+}
+
+.annapurna-img {
+  background-image: url("../images/Annapurna Region.jpg");
+}
+.langtang-img {
+  background-image: url("../images/Langtang Region.webp");
+}
+.mustang-img {
+  background-image: url("../images/Mustang & Manaslu.jpg");
+}
+
+.ebc-img {
+  background-image: url("../images/Everest Base Camp Trek.jpg");
+}
+
+.annapurna-circuit-img {
+  background-image: url("../images/Annapurna Circuit Trek.jpg");
+}
+.langtang-trek-img {
+  background-image: url("../images/Langtang Valley Trek.jpg");
+}
+.manaslu-img {
+  background-image: url("../images/Manaslu Circuit Trek.jpg");
+}
+
+.blog-img-season {
+  background-image: url("../images/Best_Time_to_Trek_in_Nepal.jpg");
+}
+.blog-img-packing {
+  background-image: url("../images/everest-base-camp-packing-list.jpg");
+}
+.blog-img-tips {
+  background-image: url("../images/Top\ 10\ Trekking\ Tips\ for\ Nepal\ First-Timers.webp");
+}
+.blog-img-permits {
+  background-image: url("../images/Nepal\ Trekking\ Permits.webp");
+}
+.blog-img-altitude {
+  background-image: url("../images/altitude-sickness-tips-nepal.png");
+}
+
+.dest-everest {
+  background-image: url("../images/Everest\ Region\ PORTRAIT.jpg");
+}
+.dest-annapurna {
+  background-image: url("../images/Annapurna\ Region.jpg");
+}
+.dest-langtang {
+  background-image: url("../images/Langtang Region.webp");
+}
+.dest-mustang {
+  background-image: url("../images/Mustang & Manaslu.jpg");
+}
+.dest-dolpo {
+  background-image: url("../images/Dolpo\ Region.png");
+}
+
+/* ----------------------------------------------------------------
+   17. RESPONSIVE — MOBILE (≤ 600px)
+---------------------------------------------------------------- */
+@media (max-width: 600px) {
+  :root {
+    --space-2xl: 3.5rem;
+  }
+
+  .hero-search {
+    flex-direction: column;
+    border-radius: var(--radius-md);
+    padding: var(--space-sm);
+  }
+  .hero-search input {
+    padding: 0.5em;
+  }
+  .hero-search .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    gap: var(--space-md) var(--space-lg);
+  }
+
+  /* Regions */
+  .about-regions {
+    grid-template-columns: 1fr;
+  }
+
+  /* Packages */
+  .packages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Destinations */
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+  .dest-large,
+  .dest-wide {
+    grid-column: 1;
+    height: 220px;
+  }
+
+  /* Features */
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Testimonials */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  .featured-testimonial {
+    grid-column: 1;
+  }
+
+  /* Blog */
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+  .blog-featured {
+    grid-column: 1;
+    flex-direction: column;
+  }
+
+  /* Form */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .contact-form-wrapper {
+    padding: var(--space-md);
+  }
+
+  /* Footer */
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-certifications {
+    justify-content: center;
+  }
+}
+
+/* ----------------------------------------------------------------
+   18. ACCESSIBILITY & FOCUS STYLES
+---------------------------------------------------------------- */
+:focus-visible {
+  outline: 3px solid var(--col-sage);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ----------------------------------------------------------------
+   END OF PHASE 2 CSS
+---------------------------------------------------------------- */

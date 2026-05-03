@@ -1,0 +1,437 @@
+/* ----------------------------------------------------------------
+   REGION HERO (specific)
+---------------------------------------------------------------- */
+.region-hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(145deg, #0a1a10, #1a3a2a);
+  margin-top: var(--header-h);
+}
+.region-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/Everest\ Base\ Camp.jpg");
+  background-size: cover;
+  background-position: 30% 50%;
+  opacity: 0.35;
+}
+.region-hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 760px;
+  padding-block: var(--space-xl);
+}
+.region-hero h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  margin-bottom: var(--space-sm);
+}
+.region-hero h1 span {
+  color: var(--col-sage);
+}
+.region-hero p {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-lg);
+}
+.region-quick-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.region-quick-facts span {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+  padding: 0.3rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* ----------------------------------------------------------------
+   OVERVIEW & STATS
+---------------------------------------------------------------- */
+.region-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: var(--space-xl);
+  align-items: start;
+}
+.overview-text p {
+  margin-bottom: var(--space-md);
+  color: var(--col-stone);
+}
+.quick-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+.stat-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.stat-card strong {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--col-summit);
+  line-height: 1.2;
+}
+.stat-card span {
+  font-size: 0.75rem;
+  color: var(--col-stone);
+}
+
+/* ----------------------------------------------------------------
+   SUBREGIONS GRID
+---------------------------------------------------------------- */
+.subregions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+.sub-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.sub-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.sub-img {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.everest-bc-img {
+  background-image: url("../images/Everest\ Base\ Camp.jpg");
+}
+.gokyo-img {
+  background-image: url("../images/Gokyo-Valley-Adventure-Great-Himalaya-.jpg");
+}
+.tengboche-img {
+  background-image: url("../images/Tengboche\ Monastery.jpg");
+}
+.namche-img {
+  background-image: url("../images/namche-bazaar.jpg");
+}
+.three-passes-img {
+  background-image: url("../images/Three\ Passes\ Trek.webp");
+}
+.phakding-img {
+  background-image: url("../images/Lukla\ to\ Phakding.jpg");
+}
+.sub-body {
+  padding: var(--space-md);
+}
+.sub-body h3 {
+  font-family: var(--ff-display);
+  color: var(--col-summit);
+  margin-bottom: 0.25rem;
+}
+.sub-body p {
+  font-size: 0.88rem;
+  color: var(--col-stone);
+}
+
+/* ----------------------------------------------------------------
+   TREKS GRID (simple cards)
+---------------------------------------------------------------- */
+.treks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-md);
+}
+.trek-option {
+  background: #fff;
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--col-sage);
+}
+.trek-option h3 {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+.trek-option p {
+  font-size: 0.8rem;
+  color: var(--col-stone);
+  margin-bottom: var(--space-sm);
+}
+
+/* ----------------------------------------------------------------
+   CULTURE SECTION
+---------------------------------------------------------------- */
+.culture-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: var(--space-xl);
+  align-items: center;
+}
+.culture-highlights {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+.highlight-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+}
+
+/* ----------------------------------------------------------------
+   NATURE CARDS
+---------------------------------------------------------------- */
+.nature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+.nature-card {
+  background: #fff;
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+.nature-card h3 {
+  font-family: var(--ff-display);
+  margin-bottom: var(--space-sm);
+  color: var(--col-summit);
+}
+
+/* ----------------------------------------------------------------
+   SEASON GRID
+---------------------------------------------------------------- */
+.season-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-md);
+}
+.season-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.season-card h3 {
+  color: var(--col-summit);
+  margin-bottom: 0.5rem;
+}
+.spring {
+  border-top: 5px solid #52b788;
+}
+.autumn {
+  border-top: 5px solid #c2905a;
+}
+.winter {
+  border-top: 5px solid #4a90b8;
+}
+.summer {
+  border-top: 5px solid #6b7280;
+}
+
+/* ----------------------------------------------------------------
+   LOGISTICS (permits)
+---------------------------------------------------------------- */
+.logistics-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-xl);
+}
+.logistics-permits {
+  background: var(--col-earth-lt);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+}
+.logistics-permits h3 {
+  font-family: var(--ff-display);
+  margin-bottom: var(--space-sm);
+}
+.logistics-permits ul {
+  list-style: none;
+  margin: var(--space-sm) 0;
+}
+.logistics-permits li {
+  padding-left: 1.2rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.logistics-permits li::before {
+  content: "📄";
+  position: absolute;
+  left: 0;
+}
+.note {
+  font-size: 0.75rem;
+  margin-top: var(--space-sm);
+}
+
+/* ----------------------------------------------------------------
+   INQUIRY FORM
+---------------------------------------------------------------- */
+.inquiry-section {
+  background: #fff;
+}
+.inquiry-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+.inquiry-text h2 {
+  font-family: var(--ff-display);
+  font-size: 1.8rem;
+  color: var(--col-summit);
+  margin-bottom: var(--space-sm);
+}
+.inquiry-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+.inquiry-features span {
+  background: rgba(45, 106, 79, 0.1);
+  padding: 0.3rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--col-pine);
+}
+.inquiry-form {
+  background: var(--col-earth-lt);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: var(--space-sm);
+}
+.form-group label {
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  font-family: inherit;
+}
+.form-note {
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: var(--space-sm);
+}
+
+/* ----------------------------------------------------------------
+   RESPONSIVE
+---------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: flex;
+  }
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--col-night);
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    padding: 5rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .main-nav.open {
+    transform: translateX(0);
+  }
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+  }
+  .dropdown {
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    padding-left: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+  }
+  .has-dropdown.open .dropdown {
+    max-height: 300px;
+  }
+  .region-overview-grid,
+  .culture-grid,
+  .logistics-grid,
+  .inquiry-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .quick-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding-block: var(--space-xl);
+  }
+  .region-quick-facts {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .quick-stats {
+    grid-template-columns: 1fr;
+  }
+  .subregions-grid {
+    grid-template-columns: 1fr;
+  }
+  .season-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+  .inquiry-wrapper {
+    gap: var(--space-md);
+  }
+}
