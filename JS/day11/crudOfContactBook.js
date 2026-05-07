@@ -1,6 +1,4 @@
 //CRUD of Contact Book
-
-//Create
 const contactBook = [
   { name: "John", phone: "1234567890", email: "john@example.com" },
   { name: "Jane", phone: "0987654321", email: "jane@example.com" },
