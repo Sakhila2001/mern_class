@@ -4,59 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>click event</title>
-
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <div class="container">
       <input type="text" id="nameInput" placeholder="Enter your name" />
       <p id="text"></p>
-
       <!-- Keydown event -->
       <input type="text" id="keyboard" placeholder="Press keyboard key" />
       <p id="keyResult"></p>
-
       <!-- mouseover event -->
       <div id="box">Hover mouse here</div>
-
       <!-- submit event -->
       <form id="myform">
         <input type="email" placeholder="enter email" />
         <button class="submit">Submit</button>
       </form>
     </div>
-    <script>
-      // Input
-      const input = document.getElementById("nameInput");
-      const text = document.getElementById("text");
-
-      input.addEventListener("input", function () {
-        text.textContent = input.value;
-      });
-
-      // Keydown event
-      const keyboard = document.getElementById("keyboard");
-      const keyResult = document.getElementById("keyResult");
-
-      keyboard.addEventListener("keydown", function (e) {
-        keyResult.textContent = "You Pressed " + e.key;
-      });
-
-      // Mouseover event
-      const box = document.getElementById("box");
-
-      box.addEventListener("mouseover", function () {
-        box.style.backgroundColor = "red";
-      });
-
-      // Submit event
-      const submit = document.getElementById("myform");
-
-      submit.addEventListener("submit", function (e) {
-        e.preventDefault();
-        alert("Form submitted");
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
