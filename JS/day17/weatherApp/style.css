@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #dfe9f3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #222;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.weather-card {
+  background: white;
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.top-section h1 {
+  font-size: 28px;
+}
+
+#locationBtn {
+  border: none;
+  background: #222;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#locationBtn:hover {
+  opacity: 0.85;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.input-group input {
+  flex: 1;
+  border: 1px solid #ddd;
+  outline: none;
+  padding: 15px;
+  border-radius: 14px;
+  font-size: 16px;
+}
+
+.input-group button {
+  width: 55px;
+  border: none;
+  border-radius: 14px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.weather-data {
+  display: none;
+}
+
+.main-weather {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.main-weather img {
+  width: 120px;
+}
+
+.main-weather h2 {
+  font-size: 60px;
+  margin: 10px 0;
+}
+
+.main-weather p {
+  font-size: 18px;
+  color: #555;
+}
+
+.main-weather h3 {
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+.weather-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.info-box {
+  background: #f7f7f7;
+  padding: 18px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.info-box i {
+  font-size: 22px;
+}
+
+.info-box p {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.loading {
+  display: none;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 550px) {
+
+  .weather-card {
+    padding: 20px;
+  }
+
+  .top-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .weather-info {
+    grid-template-columns: 1fr;
+  }
+
+  .main-weather h2 {
+    font-size: 48px;
+  }
+
+}
