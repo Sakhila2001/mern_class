@@ -24,8 +24,7 @@ body {
   background: white;
   border-radius: 24px;
   padding: 30px;
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .top-section {
@@ -145,7 +144,6 @@ body {
 }
 
 @media (max-width: 550px) {
-
   .weather-card {
     padding: 20px;
   }
@@ -162,5 +160,4 @@ body {
   .main-weather h2 {
     font-size: 48px;
   }
-
 }
