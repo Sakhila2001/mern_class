@@ -1,0 +1,11 @@
+const fs = require("fs");
+console.log("Program started");
+const data = fs.readFileSync("nodedoc.txt", "utf-8");
+console.log("Data read of nodedoc.txt");
+const data1 = fs.readFileSync("nodedoc1.txt", "utf-8");
+console.log("Data read of nodedoc1.txt");
+const data2 = fs.readFileSync("nodedoc2.txt", "utf-8");
+console.log("Data read of nodedoc2.txt");
+const data3 = fs.readFileSync("nodedoc3.txt", "utf-8");
+console.log("Data read of nodedoc3.txt");
+console.log("Program ended");
