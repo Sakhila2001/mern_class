@@ -30,6 +30,9 @@ const User = sequelize.define(
       allowNull: false,
       defaultValue: "patient",
     },
+    refreshToken: {
+      type: DataTypes.TEXT,
+    },
   },
   {
     tableName: "users",

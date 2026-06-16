@@ -1,4 +1,5 @@
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import User from "../users/user.model.js";
 
 export const registerService = async (data) => {
@@ -56,5 +57,64 @@ export const registerService = async (data) => {
     roles: roles || "patient",
   });
 
-  return user;
+  return {
+    user,
+  };
+};
+
+export const loginService = async (data) => {
+  const { email, password } = data;
+
+  if (!email || !password) {
+    throw new Error("Please provide all required fields");
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    throw new Error("Invalid email format");
+  }
+
+  // find user
+  const user = await User.findOne({ where: { email } });
+  if (!user) {
+    throw new Error("User not found");
+  }
+  // compare password
+  const isPasswordMatch = await bcrypt.compare(password, user.password);
+  if (!isPasswordMatch) {
+    throw {
+      status: 401, //401 status code means unauthorized
+      message: "Invalid password",
+    };
+  }
+  //access token and refresh token generation
+  const accessToken = jwt.sign(
+    {
+      id: user.id,
+      roles: user.roles,
+    },
+    process.env.JWT_ACCESS_SECRET,
+    { expiresIn: process.env.JWT_ACCESS_EXPIRES_IN },
+  );
+  const refreshToken = jwt.sign(
+    {
+      id: user.id,
+      roles: user.roles,
+    },
+    process.env.JWT_REFRESH_SECRET,
+    { expiresIn: process.env.JWT_REFRESH_EXPIRES_IN },
+  );
+
+  //password and refresh token excluded from response
+  //const { password: _, ...safeUser } = user.toJSON();
+  const {
+    password: _password,
+    refreshToken: _refreshToken,
+    ...safeUser
+  } = user.toJSON();
+  return {
+    accessToken,
+    refreshToken,
+    user: safeUser,
+  };
 };
