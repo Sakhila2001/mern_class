@@ -3,19 +3,21 @@ import jwt from "jsonwebtoken";
 import User from "../users/user.model.js";
 
 export const registerService = async (data) => {
-  const { name, email, password, confirmPassword, roles } = data;
+  const { firstName, lastName, email, password, confirmPassword, roles } = data;
 
   // required fields
-  if (!name || !email || !password || !confirmPassword) {
+  if (!firstName || !lastName || !email || !password || !confirmPassword) {
     throw new Error("Please provide all required fields");
   }
 
   // name validation
-  if (name.length < 3 || name.length > 50) {
-    throw new Error("Name must be between 3 and 50 characters");
+  if (firstName.length < 2 || firstName.length > 50) {
+    throw new Error("First name must be between 2 and 50 characters");
   }
-
-  if (!/^[a-zA-Z\s]+$/.test(name)) {
+  if (lastName.length < 2 || lastName.length > 50) {
+    throw new Error("Last name must be between 2 and 50 characters");
+  }
+  if (!/^[a-zA-Z\s]+$/.test(firstName) || !/^[a-zA-Z\s]+$/.test(lastName)) {
     throw new Error("Name can only contain letters and spaces");
   }
 
@@ -25,7 +27,7 @@ export const registerService = async (data) => {
     throw new Error("Invalid email format");
   }
 
-  // duplicate email check (ONLY ONCE)
+  // duplicate email check
   const existingUser = await User.findOne({ where: { email } });
   if (existingUser) {
     throw new Error("Email already exists");
@@ -41,7 +43,6 @@ export const registerService = async (data) => {
   if (password.length < 6) {
     throw new Error("Password must be at least 6 characters long");
   }
-
   if (password !== confirmPassword) {
     throw new Error("Passwords do not match");
   }
@@ -51,15 +52,21 @@ export const registerService = async (data) => {
 
   // create user
   const user = await User.create({
-    name,
+    firstName,
+    lastName,
     email,
     password: hashPassword,
     roles: roles || "patient",
   });
 
-  return {
-    user,
-  };
+  const safeUser = user.toJSON();
+  delete safeUser.password;
+  delete safeUser.refreshToken;
+  delete safeUser.isActive;
+  delete safeUser.lastLoginAt;
+  delete safeUser.deletedAt;
+
+  return { user: safeUser };
 };
 
 export const loginService = async (data) => {
@@ -74,47 +81,48 @@ export const loginService = async (data) => {
     throw new Error("Invalid email format");
   }
 
-  // find user
   const user = await User.findOne({ where: { email } });
   if (!user) {
     throw new Error("User not found");
   }
-  // compare password
+
+  if (!user.isActive) {
+    throw { status: 403, message: "Account is deactivated" };
+  }
+
   const isPasswordMatch = await bcrypt.compare(password, user.password);
   if (!isPasswordMatch) {
-    throw {
-      status: 401, //401 status code means unauthorized
-      message: "Invalid password",
-    };
+    throw { status: 401, message: "Invalid password" };
   }
-  //access token and refresh token generation
+
   const accessToken = jwt.sign(
-    {
-      id: user.id,
-      roles: user.roles,
-    },
+    { id: user.id, roles: user.roles },
     process.env.JWT_ACCESS_SECRET,
     { expiresIn: process.env.JWT_ACCESS_EXPIRES_IN },
   );
   const refreshToken = jwt.sign(
-    {
-      id: user.id,
-      roles: user.roles,
-    },
+    { id: user.id, roles: user.roles },
     process.env.JWT_REFRESH_SECRET,
     { expiresIn: process.env.JWT_REFRESH_EXPIRES_IN },
   );
 
-  //password and refresh token excluded from response
-  //const { password: _, ...safeUser } = user.toJSON();
-  const {
-    password: _password,
-    refreshToken: _refreshToken,
-    ...safeUser
-  } = user.toJSON();
-  return {
-    accessToken,
+  // store refresh token + last login in db
+  await user.update({
     refreshToken,
-    user: safeUser,
-  };
+    lastLoginAt: new Date(),
+  });
+
+  const { password: _p, refreshToken: _r, ...safeUser } = user.toJSON();
+
+  return { accessToken, refreshToken, user: safeUser };
+};
+
+export const logoutService = async (userId) => {
+  const user = await User.findByPk(userId);
+  if (!user) {
+    throw new Error("User not found");
+  }
+
+  // clear refresh token from db
+  await user.update({ refreshToken: null });
 };

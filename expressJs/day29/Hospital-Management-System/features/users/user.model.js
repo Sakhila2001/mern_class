@@ -9,7 +9,11 @@ const User = sequelize.define(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lastName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -33,10 +37,18 @@ const User = sequelize.define(
     refreshToken: {
       type: DataTypes.TEXT,
     },
+    isActive: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    },
+    lastLoginAt: {
+      type: DataTypes.DATE,
+    },
   },
   {
     tableName: "users",
     timestamps: true,
+    paranoid: true, 
   },
 );
 

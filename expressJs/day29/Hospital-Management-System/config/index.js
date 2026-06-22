@@ -1,5 +1,11 @@
 import sequelize from "./connection.js";
 import "../features/users/user.model.js";
+import "../features/departments/department.model.js";
+import "../features/doctors/doctor.model.js";
+import "../features/receptionists/receptionist.model.js";
+import "../features/patients/patient.model.js";
+import "../features/appointments/appointment.model.js";
+import "./associations.js";
 
 const connectionDB = async () => {
   try {
