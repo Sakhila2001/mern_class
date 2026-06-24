@@ -18,6 +18,14 @@ const Doctor = sequelize.define(
         key: "id",
       },
     },
+    departmentId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "departments",
+        key: "id",
+      },
+    },
     specialization: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -53,21 +61,14 @@ const Doctor = sequelize.define(
       defaultValue: true,
     },
     availableDays: {
-      type: DataTypes.STRING, // e.g. "Mon,Wed,Fri"
+      type: DataTypes.JSON,
+      allowNull: true,
     },
     availableTimeStart: {
       type: DataTypes.TIME,
     },
     availableTimeEnd: {
       type: DataTypes.TIME,
-    },
-    rating: {
-      type: DataTypes.DECIMAL(2, 1),
-      defaultValue: 0,
-      validate: {
-        min: 0,
-        max: 5,
-      },
     },
     bio: {
       type: DataTypes.TEXT,

@@ -1,4 +1,9 @@
-import { loginService, logoutService, registerService } from "./auth.service.js";
+import {
+  loginService,
+  logoutService,
+  registerService,
+  refreshTokenService,
+} from "./auth.service.js";
 
 export const registerUser = async (req, res) => {
   try {
@@ -58,5 +63,15 @@ export const logoutUser = async (req, res) => {
       success: false,
       message: error.message,
     });
+  }
+};
+
+export const refreshTokenManager = async (req, res, next) => {
+  try {
+    const refreshToken = req.cookies?.refreshToken || req.body?.refreshToken;
+    const result = await refreshTokenService(refreshToken);
+    res.status(200).json({ data: result });
+  } catch (err) {
+    next(err);
   }
 };

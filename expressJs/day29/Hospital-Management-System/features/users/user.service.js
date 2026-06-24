@@ -1,40 +1,65 @@
-import { DataTypes } from "sequelize";
+import { Op } from "sequelize";
 import sequelize from "../../config/connection.js";
+import User from "./user.model.js";
 
-const User = sequelize.define(
-  "User",
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    roles: {
-        type: DataTypes.ENUM("admin", "doctor", "receptionist", "patient"),
-        allowNull: false,
-        defaultValue: "patient",
-    },
-  },
-  {
-    tableName: "users",
-    timestamps: true,
+export const getAllUsersService = async (query) => {
+  const { page = 1, limit = 10, roles, search } = query;
+
+  const offset = (parseInt(page) - 1) * parseInt(limit);
+
+  const where = { deletedAt: null };
+
+  // filter by role
+  if (roles) {
+    const allowedRoles = ["admin", "doctor", "receptionist", "patient"];
+    const requestedRoles = roles.split(",").map((r) => r.trim());
+    const invalid = requestedRoles.filter((r) => !allowedRoles.includes(r));
+    if (invalid.length > 0)
+      throw new Error(`Invalid roles: ${invalid.join(", ")}`);
+    where.roles = { [Op.in]: requestedRoles };
   }
-);
 
-export default User;
+  // search by name
+  if (search) {
+    where[Op.or] = [
+      { firstName: { [Op.like]: `%${search}%` } },
+      { lastName: { [Op.like]: `%${search}%` } },
+      sequelize.where(
+        sequelize.fn(
+          "CONCAT",
+          sequelize.col("firstName"),
+          " ",
+          sequelize.col("lastName"),
+        ),
+        { [Op.like]: `%${search}%` },
+      ),
+    ];
+  }
+
+  const { count, rows } = await User.findAndCountAll({
+    where,
+    attributes: [
+      "id",
+      "firstName",
+      "lastName",
+      "email",
+      "roles",
+      "isActive",
+      "lastLoginAt",
+      "createdAt",
+    ],
+    order: [["createdAt", "DESC"]],
+    limit: parseInt(limit),
+    offset,
+  });
+
+  return {
+    users: rows,
+    pagination: {
+      total: count,
+      page: parseInt(page),
+      limit: parseInt(limit),
+      totalPages: Math.ceil(count / parseInt(limit)),
+    },
+  };
+};

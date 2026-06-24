@@ -126,3 +126,38 @@ export const logoutService = async (userId) => {
   // clear refresh token from db
   await user.update({ refreshToken: null });
 };
+
+export const refreshTokenService = async (refreshToken) => {
+  if (!refreshToken) {
+    throw { status: 401, message: "Refresh token not provided" };
+  }
+
+  // verify the refresh token
+  let decoded;
+  try {
+    decoded = jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET);
+  } catch (err) {
+    throw { status: 403, message: "Invalid or expired refresh token" };
+  }
+
+  // check if token matches what's stored in DB
+  const user = await User.findByPk(decoded.id);
+  if (!user) {
+    throw { status: 403, message: "User not found" };
+  }
+  if (user.refreshToken !== refreshToken) {
+    throw { status: 403, message: "Refresh token mismatch" };
+  }
+  if (!user.isActive) {
+    throw { status: 403, message: "Account is deactivated" };
+  }
+
+  // issue new access token (same payload as login)
+  const accessToken = jwt.sign(
+    { id: user.id, roles: user.roles },
+    process.env.JWT_ACCESS_SECRET,
+    { expiresIn: process.env.JWT_ACCESS_EXPIRES_IN },
+  );
+
+  return { accessToken };
+};

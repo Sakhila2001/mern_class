@@ -29,7 +29,7 @@ const Receptionist = sequelize.define(
       type: DataTypes.STRING,
     },
     shift: {
-      type: DataTypes.STRING, // e.g. morning, evening
+      type: DataTypes.ENUM("Morning", "Evening", "Night"),
     },
     employeeCode: {
       type: DataTypes.STRING,

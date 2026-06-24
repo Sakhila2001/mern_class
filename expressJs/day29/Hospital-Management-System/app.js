@@ -3,16 +3,24 @@ import express from "express";
 
 import { connectionDB } from "./config/index.js";
 import authRouter from "./features/auth/auth.routes.js";
+import departmentRouter from "./features/departments/department.route.js";
+import receptionistRouter from "./features/receptionists/receptionist.route.js";
+import doctorRouter from "./features/doctors/doctor.route.js";
+import patientRouter from "./features/patients/patient.route.js";
+import userRouter from "./features/users/user.routes.js";
 
 const app = express();
 
-// middleware
 app.use(express.json());
 
 await connectionDB();
 app.use("/api/auth", authRouter);
+app.use("/api/departments", departmentRouter);
+app.use("/api/receptionists", receptionistRouter);
+app.use("/api/doctors", doctorRouter);
+app.use("/api/patients", patientRouter);
+app.use("/api/users", userRouter);
 
-// health check route
 app.get("/", (req, res) => {
   res.send("Express server is running on port 5900");
 });

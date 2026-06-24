@@ -17,19 +17,19 @@ const Appointment = sequelize.define(
         key: "id",
       },
     },
-    doctorId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "doctors",
-        key: "id",
-      },
-    },
     departmentId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: "departments",
+        key: "id",
+      },
+    },
+    doctorId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "doctors",
         key: "id",
       },
     },
