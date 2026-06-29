@@ -237,9 +237,13 @@ export const updateDoctorProfileService = async (userId, data) => {
   if (!user) throw new Error("User not found");
 
   if (licenseNumber) {
-    const taken = await Doctor.findOne({ where: { licenseNumber } });
-    if (taken && taken.userId !== userId)
+    const taken = await Doctor.findOne({
+      where: { licenseNumber },
+      paranoid: false, // check even soft-deleted records
+    });
+    if (taken && taken.userId !== userId) {
       throw new Error("License number already exists");
+    }
   }
   if (departmentId !== undefined) {
     const existing = await Department.findOne({

@@ -214,7 +214,6 @@ export const updateReceptionistProfileService = async (
     const department = await Department.findOne({
       where: {
         id: departmentId,
-        deletedAt: null,
       },
     });
 

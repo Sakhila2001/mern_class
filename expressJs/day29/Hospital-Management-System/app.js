@@ -8,6 +8,7 @@ import receptionistRouter from "./features/receptionists/receptionist.route.js";
 import doctorRouter from "./features/doctors/doctor.route.js";
 import patientRouter from "./features/patients/patient.route.js";
 import userRouter from "./features/users/user.routes.js";
+import appointmentRouter from "./features/appointments/appointment.route.js";
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use("/api/receptionists", receptionistRouter);
 app.use("/api/doctors", doctorRouter);
 app.use("/api/patients", patientRouter);
 app.use("/api/users", userRouter);
+app.use("/api/appointments", appointmentRouter);
 
 app.get("/", (req, res) => {
   res.send("Express server is running on port 5900");

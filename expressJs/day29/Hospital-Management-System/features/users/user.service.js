@@ -9,7 +9,6 @@ export const getAllUsersService = async (query) => {
 
   const where = { deletedAt: null };
 
-  // filter by role
   if (roles) {
     const allowedRoles = ["admin", "doctor", "receptionist", "patient"];
     const requestedRoles = roles.split(",").map((r) => r.trim());

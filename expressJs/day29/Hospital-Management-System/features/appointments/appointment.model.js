@@ -48,6 +48,10 @@ const Appointment = sequelize.define(
       type: DataTypes.TIME,
       allowNull: false,
     },
+    appointmentReason: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
     status: {
       type: DataTypes.ENUM(
         "pending",
